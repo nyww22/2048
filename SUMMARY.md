@@ -5,4 +5,5 @@
 * [Autoware](autoware.md)
 * [Mission Planner Users Guide](mission-planner-users-guide.md)
 * [Flight Controller](flight-controller.md)
+* [CMake](cmake.md)
 
