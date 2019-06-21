@@ -8,7 +8,9 @@
 
 {% embed url="http://dev.px4.io/en/setup/dev\_env\_linux\_ubuntu.html" %}
 
-\*\*\*\*
+#### Building the Code
+
+{% embed url="http://dev.px4.io/en/setup/building\_px4.html" %}
 
 **SnapDragon Development Environment**
 
