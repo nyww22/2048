@@ -4,9 +4,7 @@
 
 
 
-Software In The Loopについて
+> Software In The Loopについて
 
-[https://tom2rd.sakura.ne.jp/wp/2016/10/19/post-2125/](https://tom2rd.sakura.ne.jp/wp/2016/10/19/post-2125/)
-
-
+{% embed url="https://tom2rd.sakura.ne.jp/wp/2016/10/19/post-2125/" %}
 
