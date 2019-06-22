@@ -56,6 +56,12 @@ Javaが起動して3D画面が表示されれば設定は問題なく実施で�
 
 
 
+### Debugging & Logging
+
+gdbおよびlldbを用いたdebuggin方法を記載します。
+
+{% embed url="https://dev.px4.io/en/debug/simulation\_debugging.html" %}
+
 
 
 ### **SnapDragon Development Environment**
