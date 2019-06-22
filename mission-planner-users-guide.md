@@ -1,5 +1,5 @@
 ---
-description: グランドコントロールステーションであるMission Plannerの利用ガイドを示したページです
+description: GCS（グランドコントロールステーション）であるMission Plannerの利用ガイドを示したページです
 ---
 
 # Mission Planner Users Guide
