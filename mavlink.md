@@ -4,7 +4,7 @@ description: Micro Air Vehicle Communication Protocolに関するページです
 
 # Mavlink
 
-![](.gitbook/assets/logo_mavlink_small%20%281%29.png)
+![MAVLINK Introduction](.gitbook/assets/logo_mavlink_small%20%281%29.png)
 
 > MAVLinkはドローンと（そしてオンボードドローンコンポーネント間で）通信するための非常に軽量のメッセージングプロトコルです。
 >
@@ -15,6 +15,12 @@ description: Micro Air Vehicle Communication Protocolに関するページです
 > [MAVLinkツールチェーンを](https://github.com/mavlink/mavlink/)するためにXMLメッセージの定義を使用して[生成する](https://mavlink.io/en/getting_started/generate_libraries.html)ごとにMAVLinkライブラリを[サポートされているプログラミング言語](https://mavlink.io/en/#supported_languages)。無人偵察機、地上管制局、およびその他のMAVLinkシステムは、生成されたライブラリを使用して通信します。これらは通常MITライセンスされているため、クローズドソースアプリケーションのソースコードを公開しなくても、クローズドソースアプリケーションで制限なく_使用_できます。
 
 {% embed url="https://mavlink.io/en/" %}
+
+
+
+### 参考サイト
+
+{% embed url="http://himamura.com/wp/archives/2646" %}
 
 
 
