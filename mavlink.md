@@ -26,6 +26,12 @@ description: Micro Air Vehicle Communication Protocolに関するページです
 
 
 
+### Telemetry Wifi
+
+{% embed url="https://docs.px4.io/en/telemetry/telemetry\_wifi.html" %}
+
+
+
 ### 参考サイト
 
 {% embed url="http://himamura.com/wp/archives/2646" %}
