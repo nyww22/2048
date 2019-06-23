@@ -64,6 +64,12 @@ gdbおよびlldbを用いたdebuggin方法を記載します。
 
 
 
+### Gazebo Debugging\(IDE連携\)
+
+{% embed url="https://github.com/PX4/Devguide/blob/master/en/simulation/gazebo.md" %}
+
+
+
 ### **SnapDragon Development Environment**
 
 {% embed url="https://docs.px4.io/en/getting\_started/" %}
