@@ -1,3 +1,7 @@
+---
+description: Portable Operating System Interfaceのページです。
+---
+
 # POSIX
 
 ###  サマリ
