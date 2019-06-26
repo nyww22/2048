@@ -4,7 +4,7 @@ description: Micro Air Vehicle Communication Protocolに関するページです
 
 # Mavlink
 
-![MAVLINK Introduction](.gitbook/assets/logo_mavlink_small%20%281%29.png)
+![MAVLINK Introduction](.gitbook/assets/logo_mavlink_small.png)
 
 ### MAVLink Introduction
 

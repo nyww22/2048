@@ -19,9 +19,11 @@ SSL証明書とルート証明書の関係
 
 
 
-認証: 個人の身元の確認
+![Authz&#xFF08;&#x8A8D;&#x53EF;&#xFF09;&#x3068;AWS Lambda&#x306E;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;](.gitbook/assets/image%20%282%29.png)
 
-承認: 誰かに許可を与えること
+![OpenID&#x3068;AWS Lambda&#x306E;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;](.gitbook/assets/image.png)
+
+![Amazon Cognito&#x306B;&#x3088;&#x308B;Authz&#x306E;&#x4ED5;&#x7D44;&#x307F;](.gitbook/assets/image%20%281%29.png)
 
 
 
