@@ -4,6 +4,16 @@ description: AUTOSARのClassic Platformでは想定していなかった新し�
 
 # AUTOSAR Adaptive Platform
 
+![](.gitbook/assets/0_y-vjr9nyvq7lho6c.png)
+
+
+
+### AUTOSAR Adaptive Platform Specification
+
+{% embed url="https://www.autosar.org/standards/adaptive-platform/" %}
+
+### 
+
 ### Adaptive Platform Architecture
 
 {% embed url="https://monoist.atmarkit.co.jp/mn/articles/1903/04/news012.html\#l\_sp\_190304howtoautosar08\_01.jpg&\_ga=2.1058993.1488811115.1561519844-941868272.1555663994" %}
