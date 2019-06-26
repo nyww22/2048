@@ -4,4 +4,6 @@
 * [ASIL/SIL](asil-sil.md)
 * [機能安全規格ソフトウェア開発](sofutowea.md)
 * [POSIX](posix.md)
+* [AUTOSAR Adaptive Platform](autosar-adaptive-platform.md)
+* [AUTOSAR Classic Platform](autosar-classic-platform.md)
 
