@@ -1,138 +1,101 @@
----
-description: Drone関連仕様を整理するためのページです。
----
+# サーバレスアーキテクチャ
 
-# Drone Development Environment Specification
 
-![APM&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;](.gitbook/assets/apm_ardupilot_mega-1024x768.jpg)
 
-### **Delopment Environment**
+### AWSにおける サーバーレス構成 <a id="p02"></a>
 
-{% embed url="http://dev.px4.io/en/setup/dev\_env\_linux\_ubuntu.html" %}
-
-### Building the Code
-
-{% embed url="http://dev.px4.io/en/setup/building\_px4.html" %}
-
-> #### Qt Creator on Linux <a id="qt-creator-on-linux"></a>
+> AWSにおいてのサーバーレス構成は、「Amazon S3、DynamoDB、Lambda これらの活用によって、EC2などの仮想化インスタンスサーバーを使わずにWEBサービスを開発する論理的構造\(アーキテクチャ\)」となります。
 >
-> Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
+> 「サーバーレス」というのは、Amazon S3、Lambda 等のサービスが、サーバーを使用していない…ということではありません。これらのサービスももちろんAWSサーバー上で動いています。しかし、システム運用の為に、EC2使用時の様に、固定スケールのサーバー領域の常時稼働を必要としている訳ではありません。「サーバーレス」の定義としては、ユーザーがサーバー領域を意識せず、直接利用出来るサービスを活用した構成、と言えるでしょう。
+
+###  AWS の「EC2」と「Lambda」の違い <a id="p03"></a>
+
+> EC2インスタンスを利用する場合、起動直後はOSがインストールされただけの状態となり、システムを稼働させるには、アカウントの初期設定を始め、各種ミドルウェアをインストールするなどの、環境構築が必要となります。しかし、Lambdaを利用した場合、AWSの提供した実行環境の中で起動する為、プログラムさえ用意すれば、すぐに使用が可能となります。
 >
-> ```text
-> cd ~/src/Firmware
-> mkdir ../Firmware-build
-> cd ../Firmware-build
-> cmake ../Firmware -G "CodeBlocks - Unix Makefiles"
-> ```
+> また、料金も、システムの実行時間のみの課金になりますので、コストの削減が期待出来ます。
 >
-> Then load the CMakeLists.txt in the root firmware folder via **File &gt; Open File or Project** \(Select the CMakeLists.txt file\).
+> #### EC2 インスタンス
 >
-> After loading, the **play** button can be configured to run the project by selecting 'custom executable' in the run target configuration and entering 'make' as executable and 'upload' as argument.
-
-{% hint style="info" %}
-上記記述箇所に対しての手順追加
-
-QT Creatorに対して、以下の設定手順を追加した上で、Makeを実施しないと、uploadをMakeするルールがないとのエラーが発生する。
-
-1. Qt Creatorを起動
-2. 「プロジェクトを開く」でpx4/firmware直下の"CMakeLists.txt"を選択し、「開く」
-3. Qt Creator画面左側のバーから「プロジェクト」を選択
-
-   「プロジェクトを開く」でpx4/firmware直下の"CMakeLists.txt"を選択し、「開く」
-
-4. 「ビルド設定」→ビルドステップの「詳細」をクリック
-5. 隠れていた項目が展開されるので、その中の「ターゲット:」から「jmavsim
-
-   」を選択
-
-6. Qt Creator画面左下の「実行」をクリック
-
-[https://seesaawiki.jp/px4/d/qt%A4%C7%A4%CE%A5%D3%A5%EB%A5%C9%A4%C8%BC%C2%B9%D4%28jMAVSim%29](https://seesaawiki.jp/px4/d/qt%A4%C7%A4%CE%A5%D3%A5%EB%A5%C9%A4%C8%BC%C2%B9%D4%28jMAVSim%29)
-
-
-
-Javaが起動して3D画面が表示されれば設定は問題なく実施できている。
-{% endhint %}
-
-
-
-### Debugging & Logging
-
-gdbおよびlldbを用いたdebuggin方法を記載します。
-
-{% embed url="https://dev.px4.io/en/debug/simulation\_debugging.html" %}
-
-
-
-### Gazebo Debugging\(IDE連携\)
-
-{% embed url="https://github.com/PX4/Devguide/blob/master/en/simulation/gazebo.md" %}
-
-
-
-### **SnapDragon Development Environment**
-
-{% embed url="https://docs.px4.io/en/getting\_started/" %}
-
-{% embed url="https://docs.px4.io/en/flight\_controller/snapdragon\_flight\_dev\_environment\_installation.html" %}
-
-{% embed url="https://docs.px4.io/en/flight\_controller/snapdragon\_flight\_software\_installation.html" %}
-
-> PX4 ハードウェア構成
+> ![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;&#x6BD4;&#x8F03;](https://www.skyarch.net/iot/asset/serverless_icon01.png?v=20190416)
 >
-> ![](.gitbook/assets/pixhawk_infographic2.jpg)
-
-{% embed url="http://pixhawk.org/" %}
-
-\*\*\*\*
-
-### **QGroundControl**
-
-{% embed url="https://docs.px4.io/en/config/" %}
-
-{% embed url="https://dev.qgroundcontrol.com/en/" %}
-
-{% embed url="https://docs.qgroundcontrol.com/en/" %}
-
-{% embed url="https://sdk.dronecode.org/en/examples/fly\_mission\_qgc\_plan.html" %}
-
-### **DroneCode**
-
-{% embed url="https://www.dronecode.org/" %}
-
-Dev Guide
-
-{% embed url="https://www.dronecode.org/documentation/" %}
-
-User GuideArduPilot
-
-{% embed url="http://ardupilot.org/" %}
-
-
-
-### **Pix4AutoPilot**
-
-{% embed url="https://docs.px4.io/en/getting\_started/" %}
-
-{% embed url="https://dev.px4.io/en/setup/config\_initial.html" %}
-
-{% embed url="https://docs.px4.io/en/getting\_started/frame\_selection.html" %}
-
-
-
-### **DroneCode 参考サイト**
-
-> APMはマルチコプターやラジコン飛行機で、オートパイロットを実現するためのプラットフォームです。このプラットフォームは、航空機の機体に設置するフライトコントローラー（フラコン）に搭載するための「ファームウェア」、パソコンやタブレットなど地上側の端末から機体を操作するグラウンドコントロールステーション（Ground Control Station : GCS）の役割を果たす「ソフトウェア」、そして機体に搭載するフライトコントローラーである「ハードウェア」から構成されています。
+> * 汎用的なサーバー
+> * 起動直後はOSインストールのみの状態
+> * 初期設定、環境設定が必要
+> * システムの運用、保守、監視が必要
+> * 利用出来るのは契約したサーバーの容量
+> * 一定料金。仮想サーバー稼働時間内の代金
 >
-> APMはさらに上位の開発プロジェクト「ドローンコード（Dronecode）」の一部でもあります。Dronecodeはオープンソースのドローン開発向けプラットフォームであり、世界中の企業が協力して、ドローン開発のデファクトスタンダードを作ろうとしています。以下でその内容を詳しく説明しています。
+> #### Lambda
+>
+> ![Lambda](https://www.skyarch.net/iot/asset/serverless_icon02.png?v=20190416)
+>
+> * インフラ環境の整備、必要無し
+> * 実行環境は、AWSが提供
+> * ミドルウェア等の脆弱性対応不要
+> * トリガを選択し、プログラムをアップロードすれば直ちに動作
+> * 自動スケーリング対応
+> * システムを実行時間（100ミリ秒単位）で課金
+> * 利用されなければ無課金
 
-{% embed url="https://ailerocket.com/dronecode-introduction/" %}
 
-{% embed url="https://qiita.com/akachochin/items/03a16038b3c20176c0a4" %}
 
-{% embed url="https://ailerocket.com/apm-ardupilot-autopilot/" %}
+### 「Lambda」とAWSサービス <a id="p04"></a>
 
-\*\*\*\*
+> 「Lambda」は、AWS環境にすでに用意されている多種多様なサービスと連携して利用する事が出来ます。基本的なWEBサービスの土台はそろっていますので、最小限のプログラミングでシステムを構築する事ができ、運用を始める事が出来ます。
+>
+> #### 「Lambda」に組み合わせて使用出来る代表的なAWSサービス
+>
+> ![AWS Lambda](https://www.skyarch.net/iot/asset/serverless_lambda01.png?v=20190416)
+
+
+
+### 「Lambda」の特性 <a id="p05"></a>
+
+> 「Lambda」は設定されているプログラムを起動させる実行環境となります。起動条件が整った際に、プログラムをLambda環境に呼び出し、実行されます。この為、Lambdaでは、実行した時間とその回数のみの課金となります。ですから、待機時間の長いシステムや、CPUの負荷が時間帯によって差のあるシステムなどに導入すれば、大幅なコストの削減が期待できます。
+>
+> しかし、ゲームアプリや配信系サービスなど、常にシステムの動いている必要のあるサービスや、高負荷な状態が長時間続くシステムなどでは、Lambda、すなわちサーバーレス構成は不向きなものと言えます。
+
+
+
+### サーバーレス構造・実績 <a id="p06"></a>
+
+> #### 大量のアクセスを捌くアーキテクチャ
+>
+> 下記はある企業のサイトで実装した、サーバーレスの導入例です。ネットでの注文のデータを今後に活かす為、データベースに蓄積するシステムになります。これをオンプレミス\(自社運用\)で賄おうとすると膨大なサーバーが必要となります。そこでAWSを利用した実装を考察しましたが、システムの常時起動、AutoScaleによる負荷の対応、RDSの同時接続数などの課題が上りました。
+>
+> ![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;](https://www.skyarch.net/iot/asset/serverless_lambda02.png?v=20190416)
+>
+> 上記を踏まえ、サーバーレス構成での実装です。API Gatewayでリクエストを受けた際にLambdaを起動。処理したデータをAWS環境のSQSにてキューとして一旦保存。このキューをもう一つのLambdaの定期実行によりチェックして、データべースに保存する、という構成です。リクエストと定期時実行によるLambdaの起動で、運用コストの削減が期待でき、キューイングによる保存処理によって、データベースへの負荷を軽減します。![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;](https://www.skyarch.net/iot/asset/serverless_lambda03.png?v=20190416)
+>
+> このように部分部分でシステムを分割し、疎結合なアーキテクチャを採用する事で、下記のようなメリットを享受する事ができます。
+>
+> * 大量のアクセスを捌くことが可能となる
+> * 並行開発が可能となる
+> * メンテナンスを容易に実施出来る
+>
+> #### サーバレスアーキテクチャの動作確認
+>
+> リクエスト結果をS3へファイル保存を行うサーバレス構成を元にサーバレス構成の監視方法をご説明します。
+>
+> ![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;](https://www.skyarch.net/iot/asset/serverless_lambda04.png?v=20190416)
+>
+> Lambdaより、定期実行でサンプルリクエストをして、正しい流れでS3へのデータ保存が出来ているかを監視します。異常が検知された際には、管理者へアラートメールが送られます。
+
+
+
+### Useful Frameworks for Serverless Web Apps
+
+#### Java - HttpServlet, Spring, Spark and Jersey
+
+{% embed url="https://github.com/awslabs/aws-serverless-java-container" %}
+
+
+
+### 参考サイト
+
+{% embed url="https://dev.classmethod.jp/cloud/aws/aws-reinvent-arc401/" %}
+
+{% embed url="https://www.skyarch.net/iot/serverless.html" %}
 
 
 
