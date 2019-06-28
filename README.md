@@ -8,6 +8,12 @@
 
 {% embed url="https://www.archlinux.site/2018/02/uefiwindows-10ubuntu.html" %}
 
+[https://slacknotebook.com/os-dual-boot-is-a-bad-idea/](https://slacknotebook.com/os-dual-boot-is-a-bad-idea/)
+
+
+
+
+
 
 
 ### UEFIモード
