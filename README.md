@@ -1,5 +1,9 @@
 # Install Ubuntu
 
+### Ubuntuインストール時にHDDが認識されない
+
+{% embed url="https://forums.ubuntulinux.jp/iewtopic.php?pid=661" %}
+
 
 
 ### WindowsとUbuntuのデュアルブート
