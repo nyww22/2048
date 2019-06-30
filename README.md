@@ -4,6 +4,10 @@
 
 {% embed url="https://forums.ubuntulinux.jp/iewtopic.php?pid=661" %}
 
+{% embed url="https://wiki.archlinux.org/index.php/Dell\_XPS\_13\_\(9370\)\#UEFI" %}
+
+{% embed url="http://siburu.hatenblog.com/entry/2019/01/28/012444" %}
+
 
 
 ### WindowsとUbuntuのデュアルブート
