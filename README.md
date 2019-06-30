@@ -8,6 +8,8 @@
 
 {% embed url="http://siburu.hatenablog.com/entry/2019/01/28/012444" %}
 
+{% embed url="http://takacity.blog.fc2.com/blog-entry-207.html" %}
+
 
 
 
@@ -19,6 +21,10 @@
 {% embed url="https://www.archlinux.site/2018/02/uefiwindows-10ubuntu.html" %}
 
 {% embed url="https://slacknotebook.com/os-dual-boot-is-a-bad-idea/" %}
+
+{% embed url="https://qiita.com/medalotte/items/4bb5cfa709e93d044f1c" %}
+
+
 
 
 
