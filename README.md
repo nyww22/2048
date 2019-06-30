@@ -6,7 +6,9 @@
 
 {% embed url="https://wiki.archlinux.org/index.php/Dell\_XPS\_13\_\(9370\)\#UEFI" %}
 
-{% embed url="http://siburu.hatenblog.com/entry/2019/01/28/012444" %}
+{% embed url="http://siburu.hatenablog.com/entry/2019/01/28/012444" %}
+
+
 
 
 
