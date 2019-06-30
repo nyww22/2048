@@ -14,6 +14,14 @@
 
 
 
+### BitLocker RecoveryKey
+
+{% embed url="https://account.microsoft.com/devices/recoverykey" %}
+
+
+
+
+
 ### WindowsとUbuntuのデュアルブート
 
 {% embed url="https://qiita.com/yo\_kanyukari/items/2a944a300db22482c696" %}
