@@ -14,6 +14,16 @@ description: Software In The Loopについてのページです
 
 
 
+#### Trouble Shooting
+
+{% embed url="https://github.com/PX4/jMAVSim/issues/96" %}
+
+
+
+
+
+
+
 ### GazeboSimulator
 
 {% embed url="https://dev.px4.io/en/setup/dev\_env\_linux.html\#jmavsimgazebo-simulation" %}
