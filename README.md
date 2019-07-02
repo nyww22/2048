@@ -65,7 +65,9 @@ VS Code（IDE）を使ったステップ実行について：　未確認
 
 {% embed url="https://github.com/PX4/Firmware/issues/11726" %}
 
+QT（IDE）とDebugging連携について：　未確認
 
+{% embed url="https://discuss.px4.io/t/debug-posix-build-in-qt/2981" %}
 
 
 
