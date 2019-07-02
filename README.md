@@ -61,6 +61,64 @@ gdbおよびlldbを用いたdebugging方法を記載します。
 
 
 
+#### QTCreator（IDE）との連携
+
+gdbinitファイルに、以下の記載を追加する。
+
+```text
+add-auto-load-safe-path <path>/src/Firmware-build/tmp/rootfs/.gdbinit
+```
+
+
+
+QT Creatrorから「jmavsim\_\_\_gdb」ビルドオプションを追加する。
+
+![](.gitbook/assets/image%20%282%29.png)
+
+{% hint style="info" %}
+ログについて
+
+> warning: File "/home/takuto/shadow-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+>
+> To enable execution of this file add
+>
+>  add-auto-load-safe-path /home/takuto/shadow-build/tmp/rootfs/.gdbinit
+>
+> line to your configuration file "/home/takuto/.gdbinit".
+{% endhint %}
+
+
+
+#### threadのアタッチを許可するための設定を変更
+
+以下引用
+
+> In Maverick Meerkat \(10.10\) Ubuntu introduced a patch to disallow ptracing of non-child processes by non-root users - ie. only a process which is a parent of another process can ptrace it for normal users - whilst root can still ptrace every process. Hence why you can use gdb to attach via sudo still.
+>
+> You can temporarily disable this restriction \(and revert to the old behaviour allowing your user to ptrace \(gdb\) any of their other processes\) by doing:
+>
+> ```text
+> echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+> ```
+>
+> To permanently allow it edit /etc/sysctl.d/10-ptrace.conf and change the line:
+>
+> ```text
+> kernel.yama.ptrace_scope = 1
+> ```
+>
+> To read
+>
+> ```text
+> kernel.yama.ptrace_scope = 0
+> ```
+>
+> For some background on why this change was made, see the [Ubuntu wiki](https://wiki.ubuntu.com/SecurityTeam/Roadmap/KernelHardening#ptrace%20Protection)
+
+{% embed url="https://askubuntu.com/questions/41629/after-upgrade-gdb-wont-attach-to-process/41656\#41656" %}
+
+
+
 VS Code（IDE）を使ったステップ実行について：　未確認
 
 {% embed url="https://github.com/PX4/Firmware/issues/11726" %}
