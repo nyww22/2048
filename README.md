@@ -301,7 +301,9 @@ jmavsim\_\_\_debugの記載箇所を参照：未確認
 >
 >  info "\(gdb\)Auto-loading safe path"
 
-\*\*\*\*
+{% embed url="https://dev.px4.io/en/simulation/gazebo.html" %}
+
+
 
 ### **SnapDragon Development Environment**
 

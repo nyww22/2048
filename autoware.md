@@ -28,6 +28,12 @@ description: 自動運転システムに関するページです
 
 
 
+### MATLAB/Simulinkモデルベース開発
+
+{% embed url="https://www.exmotion.co.jp/solution/auto.html" %}
+
+
+
 
 
 
