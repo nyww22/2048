@@ -18,5 +18,11 @@ Monolithic architecture
 
 
 
+### SpringBootで構築されているらしい
+
+{% embed url="https://eng-entrance.com/java-springboot" %}
+
+
+
 
 
