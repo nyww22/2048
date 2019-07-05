@@ -6,13 +6,13 @@ description: IoTプラットフォームとしてOSSで展開されているThin
 
 ### ThingsBoard Architecture
 
-Microservices architecture
+#### Microservices architecture
 
 {% embed url="https://thingsboard.io/docs/reference/msa/" %}
 
 
 
-Monolithic architecture
+#### Monolithic architecture
 
 {% embed url="https://thingsboard.io/docs/reference/monolithic/" %}
 
