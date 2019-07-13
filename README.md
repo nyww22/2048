@@ -1,52 +1,377 @@
-# RTOS
+---
+description: Drone関連仕様を整理するためのページです。
+---
 
-### RTOSの概要
+# Drone Development Environment Specification
 
-> #### RTOS、7つの特徴
+![APM&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;](.gitbook/assets/apm_ardupilot_mega-1024x768.jpg)
+
+### **Delopment Environment**
+
+{% embed url="http://dev.px4.io/en/setup/dev\_env\_linux\_ubuntu.html" %}
+
+### Building the Code
+
+{% embed url="http://dev.px4.io/en/setup/building\_px4.html" %}
+
+> #### Qt Creator on Linux <a id="qt-creator-on-linux"></a>
 >
-> 　RTOSは、上に挙げたような問題を解決するための手段であり、具体的には以下のような特長を持つ。
+> Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
 >
-> * 複数スレッド（タスク）の並行動作が可能
+> ```text
+> cd ~/src/Firmware
+> mkdir ../Firmware-build
+> cd ../Firmware-build
+> cmake ../Firmware -G "CodeBlocks - Unix Makefiles"
+> ```
 >
-> 　RTOSはOperating Systemであり、複数スレッド（RTOS業界ではタスクと称することが多いが、実質的には同じものである）を並行して動作させることが可能だ。また、この際にそれぞれのスレッドをどう管理して、動かすかを選択できる（一般的なOSによくあるタイムシェアリングの他にプライオリティベース、イベントドリブンなど細かく選ぶことが可能なものが多い。
+> Then load the CMakeLists.txt in the root firmware folder via **File &gt; Open File or Project** \(Select the CMakeLists.txt file\).
 >
-> * 最悪応答時間が決まっている
+> After loading, the **play** button can be configured to run the project by selecting 'custom executable' in the run target configuration and entering 'make' as executable and 'upload' as argument.
+
+{% hint style="info" %}
+上記記述箇所に対しての手順追加
+
+QT Creatorに対して、以下の設定手順を追加した上で、Makeを実施しないと、uploadをMakeするルールがないとのエラーが発生する。
+
+1. Qt Creatorを起動
+2. Qt Creator画面左側のバーから「プロジェクト」を選択
+3. 「プロジェクトを開く」でpx4/firmware直下の"CMakeLists.txt"を選択し、「開く」
+4. 「ビルド設定」→ビルドステップの「詳細」をクリック
+5. 隠れていた項目が展開されるので、その中の「ターゲット:」から「jmavsim
+
+   」を選択
+
+6. Qt Creator画面左下の「実行」をクリック
+
+[https://seesaawiki.jp/px4/d/qt%A4%C7%A4%CE%A5%D3%A5%EB%A5%C9%A4%C8%BC%C2%B9%D4%28jMAVSim%29](https://seesaawiki.jp/px4/d/qt%A4%C7%A4%CE%A5%D3%A5%EB%A5%C9%A4%C8%BC%C2%B9%D4%28jMAVSim%29)
+
+
+
+Javaが起動して3D画面が表示されれば設定は問題なく実施できている。
+{% endhint %}
+
+
+
+### Debugging & Logging
+
+gdbおよびlldbを用いたdebugging方法を記載します。
+
+{% embed url="https://dev.px4.io/en/debug/simulation\_debugging.html" %}
+
+
+
+#### QTCreator（IDE）との連携
+
+gdbinitファイルに、以下の記載を追加する。
+
+```text
+add-auto-load-safe-path <path>/src/Firmware-build/tmp/rootfs/.gdbinit
+```
+
+
+
+QT Creatrorから「jmavsim\_\_\_gdb」ビルドオプションを追加する。
+
+![](.gitbook/assets/image%20%282%29.png)
+
+{% hint style="info" %}
+ログについて
+
+> warning: File "/home/takuto/shadow-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
 >
-> 　“Real Time”の意味は「最悪応答時間が決まっている」である。具体的には、割り込みが入ってから、ISR（Interuppt Service Routine）経由で当該ルーティン（を実施しているタスク）が実行可能状態になり、処理を開始するまでの所要時間の最悪値が保証されている。これにより、実時間処理が必要な作業を実装することが可能である。
+> To enable execution of this file add
 >
-> * 最悪応答時間を保証する設計となっている
+>  add-auto-load-safe-path /home/takuto/shadow-build/tmp/rootfs/.gdbinit
 >
-> 　この最悪応答時間を保証するために、OSあるいはスケジューラで提供される機能は最低限に絞られており、なるべく軽く動くように設計されている。
+> line to your configuration file "/home/takuto/.gdbinit".
+{% endhint %}
+
+
+
+#### threadのアタッチを許可するための設定を変更
+
+以下引用
+
+> In Maverick Meerkat \(10.10\) Ubuntu introduced a patch to disallow ptracing of non-child processes by non-root users - ie. only a process which is a parent of another process can ptrace it for normal users - whilst root can still ptrace every process. Hence why you can use gdb to attach via sudo still.
 >
-> * 仮想メモリは原則的にサポートされない
+> You can temporarily disable this restriction \(and revert to the old behaviour allowing your user to ptrace \(gdb\) any of their other processes\) by doing:
 >
-> 　RTOSにおいて仮想メモリは原則として非サポートである。これはリアルタイム性を損なうためである（例えばリアルタイム処理が必要なタスクがスワップアウトされたりすると、最悪応答時間を守る事ができなくなる。またページングそのものが決して軽い処理ではないので、このオーバーヘッドは無視できない）。また、メモリアロケーションの仕組みも、リアルタイム性の確保のために動的な仕組みが提供されるケースは少なく、大抵は固定サイズのメモリブロックを割り当てる方式である。メモリ保護そのものはMMUベースのものが提供される。
+> ```text
+> echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+> ```
 >
-> * 複数のタスク間通信が用意される
+> To permanently allow it edit /etc/sysctl.d/10-ptrace.conf and change the line:
 >
-> 　タスク間通信に関しては、イベントベース（割り込みなど）のものやポーリングベース（セマフォなど）、メッセージベース（共有メモリなど）のもの、あるいは複数を合体させたもの（Mailboxなど）、さらにはRPCベースのものなど、複数用意されるのが一般的だ。クリティカルセクションなども用意される場合もある。ただこれらの機能は、マイコンがハードウェア的にどこまでそれぞれの機能を実装しているかで性能差があるため、一概に「これが最速」とは言いにくい部分もある。
+> ```text
+> kernel.yama.ptrace_scope = 1
+> ```
 >
-> * マルチプロセッサ対応は必須ではない
+> To read
 >
-> 　マルチプロセッサについては、対応しているものもある。ただしこうした構成では、対称型のマルチプロセッサというケースは珍しく、例えばCortex-M0とCortex-M4といった、異なるマイコンの場合もあり、こうしたケースでは両方のマイコンにそれぞれ別のRTOSが載る（もしくは、片方にはRTOSが載らない）なんてケースもあるため、必ずしもマルチプロセッサ対応は必須では無い。
+> ```text
+> kernel.yama.ptrace_scope = 0
+> ```
 >
-> * 機能の取捨選択が可能
+> For some background on why this change was made, see the [Ubuntu wiki](https://wiki.ubuntu.com/SecurityTeam/Roadmap/KernelHardening#ptrace%20Protection)
+
+{% embed url="https://askubuntu.com/questions/41629/after-upgrade-gdb-wont-attach-to-process/41656\#41656" %}
+
+
+
+VS Code（IDE）を使ったステップ実行について：　未確認
+
+{% embed url="https://github.com/PX4/Firmware/issues/11726" %}
+
+QT（IDE）とDebugging連携について：　未確認
+
+{% embed url="https://discuss.px4.io/t/debug-posix-build-in-qt/2981" %}
+
+jmavsim\_\_\_debugの記載箇所を参照：未確認
+
+{% embed url="https://www.bountysource.com/teams/px4/issues?tracker\_ids=38809796" %}
+
+
+
+### Gazebo Debugging\(IDE連携\)
+
+{% embed url="https://github.com/PX4/Devguide/blob/master/en/simulation/gazebo.md" %}
+
+> \(IDEコンパイル情報\)
 >
-> 　カーネルと一部のコア機能は固定であるが、それ以外の機能は利用する／しないに応じてカスタマイズできるようになっているのが一般的である。例えばTCP/IPのスタックは非常に重いので、IPのみとかIP+UDPとか、IP+TCP（ただし一部）、あるいはそもそも搭載しないといった選択が可能だ。これにより、不要な機能をロードしないことでメモリ利用量を最小に抑えることができる。
+> Scanning dependencies of target jmavsim\_\_\_gdb
 >
-> [![&#x4E00;&#x822C;&#x7684;&#x306A;OS&#x3068;RTOS&#x306E;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x306E;&#x9055;&#x3044;](https://image.itmedia.co.jp/tf/articles/1705/17/hi_rtos01.jpg)](https://image.itmedia.co.jp/l/im/tf/articles/1705/17/l_hi_rtos01.jpg)
+> SITL ARGS
 >
-> 　左の図1が一般的なOSのイメージであるが、基本的にハードウェアは全てOSの管理下にあり、そのハードウェアを利用するためのドライバが提供され、さらにミドルウェア（Windows OSで言うなら.NET Frameworkとか）がきちんと用意され、その上で複数のアプリケーションとユーザーインタフェースが動作する。
+> sitl\_bin: /home/takuto/shadow-build/bin/px4
 >
-> 　ではRTOS（右の図2）は？というと、まずHALやOSは必要最小限のハードウェアしかカバーしないし、その機能もここまで説明した通り最小限である。ドライバは一応OS管理下のハードウェアに関しては存在するが、こちらも最小限である。その上のミドルウェアやネットワークスタックはオプション扱いになっており、後は全部アプリケーションでカバーする、という感じだと考えればいい。
+> debugger: gdb
 >
-> #### 主なRTOS、組み込み向けLinuxとの違い
+> program: jmavsim
 >
-> 　国内で言えばμITRONやその延長でTOPPERSが広く使われているが、海外ではAVIX（AVIX-RT）、LynxOS（LynuxWorks）、Micrium OS（Micrium）、Nucleus RTOS（Mentor Graphics）、QNX（BlackBerry）、Thread X（expresslogic）、VxWorks（WindRiver）などが利用されている。フリーのRTOS（eCosやFreeRTOSなど）も存在している。
+> model: none
 >
-> 　ちなみに同種のものとして、Linuxをベースにリアルタイム性を付加したRealtime Linux（RTLinuxなど）と、組み込み向けのLinuxであるEmbedded Linuxがある。前者はLinuxのタイマー管理部を利用し、リアルタイムスケジューラを動かすことで特定アプリケーションだけをリアルタイムで動かせるようにしただけのもの。全体としてはLinuxそのものなので、要求されるハードウェア資源はマイコンというよりはPCのレベルに近い。
+> src\_path: /home/takuto/shadow
 >
-> 　後者のEmbedded Linuxは、携帯電話や情報機器向けにLinuxを流用しようという目的で開発されたもので、必要とする機能以外を省けるあたりはRTOSに近く、機器の価格を下げるためもあって、なるべく省メモリで動作するように工夫されている（とはいえRTOSより必要なメモリ量は多い）。しかし、リアルタイム性などでは著しく劣っている。
+> build\_path: /home/takuto/shadow-build
 >
-> 　このため、Linuxカーネルのみをリアルタイム性の高いマイクロカーネルに置き換えたものも幾つかある。ただそうなると、LinuxのAPIだけを提供すれば良く、Linuxそのものである必要はないという議論も成立するわけで、実際LynxOSやNucleus RTOS、QNXなどはいずれもPOSIX互換のAPIを提供している。そんな訳でEmbedded LinuxとRTOSの境界はやや曖昧になっているのが現状である。
+> empty model, setting iris as default
+>
+> SITL COMMAND: "/home/takuto/shadow-build/bin/px4" "/home/takuto/shadow"/ROMFS/px4fmu\_common -s etc/init.d-posix/rcS -t "/home/takuto/shadow"/test\_data
+>
+> GNU gdb \(Ubuntu 8.1-0ubuntu3\) 8.1.0.20180409-git
+>
+> Copyright \(C\) 2018 Free Software Foundation, Inc.
+>
+> License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+>
+> This is free software: you are free to change and redistribute it.
+>
+> There is NO WARRANTY, to the extent permitted by law. Type "show copying"
+>
+> and "show warranty" for details.
+>
+> This GDB was configured as "x86\_64-linux-gnu".
+>
+> Type "show configuration" for configuration details.
+>
+> For bug reporting instructions, please see:
+>
+> &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+>
+> Find the GDB manual and other documentation resources online at:
+>
+> &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+>
+> For help, type "help".
+>
+> Type "apropos word" to search for commands related to "word"...
+>
+> Reading symbols from /home/takuto/shadow-build/bin/px4...Buildfile: /home/takuto/shadow/Tools/jMAVSim/build.xml
+>
+> done.
+>
+> warning: File "/home/takuto/shadow-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+>
+> To enable execution of this file add
+>
+>  add-auto-load-safe-path /home/takuto/shadow-build/tmp/rootfs/.gdbinit
+>
+> line to your configuration file "/home/takuto/.gdbinit".
+>
+> To completely disable this security protection add
+>
+>  set auto-load safe-path /
+>
+> line to your configuration file "/home/takuto/.gdbinit".
+>
+> For more information about this security protection see the
+>
+> "Auto-loading safe path" section in the GDB manual. E.g., run from the shell:
+>
+>  info "\(gdb\)Auto-loading safe path"
+>
+> \(gdb\)
+>
+> make\_dirs:
+>
+> compile:
+>
+> create\_run\_jar:
+>
+> copy\_res:
+>
+> BUILD SUCCESSFUL
+>
+> Total time: 0 seconds
+>
+> Options parsed, starting Sim.
+>
+> Starting GUI...
+
+コンパイル情報（参考まで）
+
+> SITL ARGS
+>
+> sitl\_bin: /home/takuto/src/Firmware-build/bin/px4
+>
+> debugger: gdb
+>
+> program: jmavsim
+>
+> model: none
+>
+> src\_path: /home/takuto/src/Firmware
+>
+> build\_path: /home/takuto/src/Firmware-build
+>
+> empty model, setting iris as default
+>
+> SITL COMMAND: "/home/takuto/src/Firmware-build/bin/px4" "/home/takuto/src/Firmware"/ROMFS/px4fmu\_common -s etc/init.d-posix/rcS -t "/home/takuto/src/Firmware"/test\_data
+>
+> GNU gdb \(Ubuntu 7.11.1-0ubuntu1~16.5\) 7.11.1
+>
+> Copyright \(C\) 2016 Free Software Foundation, Inc.
+>
+> License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+>
+> This is free software: you are free to change and redistribute it.
+>
+> There is NO WARRANTY, to the extent permitted by law. Type "show copying"
+>
+> and "show warranty" for details.
+>
+> This GDB was configured as "x86\_64-linux-gnu".
+>
+> Type "show configuration" for configuration details.
+>
+> For bug reporting instructions, please see:
+>
+> &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
+>
+> Find the GDB manual and other documentation resources online at:
+>
+> &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
+>
+> For help, type "help".
+>
+> Type "apropos word" to search for commands related to "word"...
+>
+> Reading symbols from /home/takuto/src/Firmware-build/bin/px4...Buildfile: /home/takuto/src/Firmware/Tools/jMAVSim/build.xml
+>
+> done.
+>
+> warning: File "/home/takuto/src/Firmware-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+>
+> To enable execution of this file add
+>
+>  add-auto-load-safe-path /home/takuto/src/Firmware-build/tmp/rootfs/.gdbinit
+>
+> line to your configuration file "/home/takuto/.gdbinit".
+>
+> To completely disable this security protection add
+>
+>  set auto-load safe-path /
+>
+> line to your configuration file "/home/takuto/.gdbinit".
+>
+> For more information about this security protection see the
+>
+> "Auto-loading safe path" section in the GDB manual. E.g., run from the shell:
+>
+>  info "\(gdb\)Auto-loading safe path"
+
+{% embed url="https://dev.px4.io/en/simulation/gazebo.html" %}
+
+
+
+### **SnapDragon Development Environment**
+
+{% embed url="https://docs.px4.io/en/getting\_started/" %}
+
+{% embed url="https://docs.px4.io/en/flight\_controller/snapdragon\_flight\_dev\_environment\_installation.html" %}
+
+{% embed url="https://docs.px4.io/en/flight\_controller/snapdragon\_flight\_software\_installation.html" %}
+
+> PX4 ハードウェア構成
+>
+> ![](.gitbook/assets/pixhawk_infographic2.jpg)
+
+{% embed url="http://pixhawk.org/" %}
+
+\*\*\*\*
+
+### **QGroundControl**
+
+{% embed url="https://docs.px4.io/en/config/" %}
+
+{% embed url="https://dev.qgroundcontrol.com/en/" %}
+
+{% embed url="https://docs.qgroundcontrol.com/en/" %}
+
+{% embed url="https://sdk.dronecode.org/en/examples/fly\_mission\_qgc\_plan.html" %}
+
+### **DroneCode**
+
+{% embed url="https://www.dronecode.org/" %}
+
+Dev Guide
+
+{% embed url="https://www.dronecode.org/documentation/" %}
+
+User GuideArduPilot
+
+{% embed url="http://ardupilot.org/" %}
+
+
+
+### **Pix4AutoPilot**
+
+{% embed url="https://docs.px4.io/en/getting\_started/" %}
+
+{% embed url="https://dev.px4.io/en/setup/config\_initial.html" %}
+
+{% embed url="https://docs.px4.io/en/getting\_started/frame\_selection.html" %}
+
+
+
+### **DroneCode 参考サイト**
+
+> APMはマルチコプターやラジコン飛行機で、オートパイロットを実現するためのプラットフォームです。このプラットフォームは、航空機の機体に設置するフライトコントローラー（フラコン）に搭載するための「ファームウェア」、パソコンやタブレットなど地上側の端末から機体を操作するグラウンドコントロールステーション（Ground Control Station : GCS）の役割を果たす「ソフトウェア」、そして機体に搭載するフライトコントローラーである「ハードウェア」から構成されています。
+>
+> APMはさらに上位の開発プロジェクト「ドローンコード（Dronecode）」の一部でもあります。Dronecodeはオープンソースのドローン開発向けプラットフォームであり、世界中の企業が協力して、ドローン開発のデファクトスタンダードを作ろうとしています。以下でその内容を詳しく説明しています。
+
+{% embed url="https://ailerocket.com/dronecode-introduction/" %}
+
+{% embed url="https://qiita.com/akachochin/items/03a16038b3c20176c0a4" %}
+
+{% embed url="https://ailerocket.com/apm-ardupilot-autopilot/" %}
+
+{% embed url="https://www.notion.so/tetra3/3ab3fe9ab2154760bbe94962c1e04c7c" %}
+
+
+
+\*\*\*\*
+
+
 

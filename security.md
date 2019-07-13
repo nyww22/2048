@@ -33,6 +33,12 @@ SSL証明書とルート証明書の関係
 
 
 
+### Refresh Tokenの仕組み
+
+{% embed url="https://auth0.com/blog/jp-refresh-tokens-what-are-they-and-when-to-use-them/" %}
+
+
+
 
 
 
