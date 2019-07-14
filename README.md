@@ -36,6 +36,12 @@
 
 
 
+### Setting Ubuntu
+
+{% embed url="https://qiita.com/taiko19xx/items/d1a001bfc25245b91354" %}
+
+
+
 
 
 ### WindowsとUbuntuのデュアルブート
