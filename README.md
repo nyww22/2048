@@ -28,6 +28,10 @@
 
 
 
+### Ubuntu Setting
+
+{% embed url="https://chishiki-motomeru.com/post/20190112/" %}
+
 
 
 ### BitLocker RecoveryKey
