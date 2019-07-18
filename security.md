@@ -45,6 +45,12 @@ SSL証明書とルート証明書の関係
 
 
 
+### OAuth認証とは
+
+OAuthは認可の仕組みであるが、OAuthを使って『誰が？』にあたる部分のユーザ識別を行う仕組みです。
+
+{% embed url="https://qiita.com/TakahikoKawasaki/items/f2a0d25a4f05790b3baa" %}
+
 
 
 
