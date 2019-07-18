@@ -69,5 +69,9 @@ OAuthは認可の仕組みであるが、OAuthを使って『誰が？』にあ�
 
 
 
+### シングルサインオンについて
+
+{% embed url="https://www.ogis-ri.co.jp/pickup/themistruct/note/note\_sso01.html" %}
+
 
 
