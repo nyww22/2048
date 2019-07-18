@@ -39,6 +39,12 @@ SSL証明書とルート証明書の関係
 
 
 
+### 認証（ID連携）
+
+{% embed url="https://techblog.yahoo.co.jp/web/auth/id\_federation\_impl\_patterns/" %}
+
+
+
 
 
 
