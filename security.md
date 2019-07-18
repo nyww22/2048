@@ -59,5 +59,15 @@ OAuthは認可の仕組みであるが、OAuthを使って『誰が？』にあ�
 
 
 
+### OAuth認証の脆弱性について
+
+{% embed url="https://www.sakimura.org/2012/02/1487/" %}
+
+{% embed url="https://ritou.hatenablog.com/entry/2018/11/12/110613" %}
+
+{% embed url="https://www.atmarkit.co.jp/ait/articles/1710/24/news011.html" %}
+
+
+
 
 
