@@ -53,6 +53,10 @@ OAuthは認可の仕組みであるが、OAuthを使って『誰が？』にあ�
 
 
 
+### IDトークンとアクセストークンの使い道の違い
+
+{% embed url="https://qiita.com/wadahiro/items/ad36c7932c6627149873" %}
+
 
 
 
