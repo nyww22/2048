@@ -68,6 +68,10 @@
 
 
 
+#### 時刻同期がずれる（デュアルブート環境限定）
+
+{% embed url="https://hosopro.blogspot.com/2016/12/windows10windows-time-service.html" %}
+
 
 
 ### UEFIモード
