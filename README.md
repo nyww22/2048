@@ -1,104 +1,52 @@
-# Install Ubuntu
+# RTOS
 
-### Ubuntuインストール時にHDDが認識されない
+### RTOSの概要
 
-{% embed url="https://forums.ubuntulinux.jp/iewtopic.php?pid=661" %}
-
-{% embed url="https://wiki.archlinux.org/index.php/Dell\_XPS\_13\_\(9370\)\#UEFI" %}
-
-{% embed url="http://siburu.hatenablog.com/entry/2019/01/28/012444" %}
-
-{% embed url="http://takacity.blog.fc2.com/blog-entry-207.html" %}
-
-
-
-### シンボリックリンク作成時の注意
-
-> ## [\# ln で、Operation not permitted になる](http://yellowarrow.hatenablog.com/entry/2015/04/27/200000)
+> #### RTOS、7つの特徴
 >
-> [linux](http://yellowarrow.hatenablog.com/archive/category/linux) [Troubleshooting](http://yellowarrow.hatenablog.com/archive/category/Troubleshooting)
+> 　RTOSは、上に挙げたような問題を解決するための手段であり、具体的には以下のような特長を持つ。
 >
-> 外部メディアのSDカード上でビルドしてたら、途中で出てきた。
+> * 複数スレッド（タスク）の並行動作が可能
 >
-> [ファイルシステム](http://d.hatena.ne.jp/keyword/%A5%D5%A5%A1%A5%A4%A5%EB%A5%B7%A5%B9%A5%C6%A5%E0)がvfatなドライブ上で[シンボリックリンク](http://d.hatena.ne.jp/keyword/%A5%B7%A5%F3%A5%DC%A5%EA%A5%C3%A5%AF%A5%EA%A5%F3%A5%AF)を作ろうとすると、
+> 　RTOSはOperating Systemであり、複数スレッド（RTOS業界ではタスクと称することが多いが、実質的には同じものである）を並行して動作させることが可能だ。また、この際にそれぞれのスレッドをどう管理して、動かすかを選択できる（一般的なOSによくあるタイムシェアリングの他にプライオリティベース、イベントドリブンなど細かく選ぶことが可能なものが多い。
 >
-> これが表示されるらしい。つまり、vfatでは[シンボリックリンク](http://d.hatena.ne.jp/keyword/%A5%B7%A5%F3%A5%DC%A5%EA%A5%C3%A5%AF%A5%EA%A5%F3%A5%AF)を作れない。
+> * 最悪応答時間が決まっている
 >
-> $ mount で、ディレクトリごとの[ファイルシステム](http://d.hatena.ne.jp/keyword/%A5%D5%A5%A1%A5%A4%A5%EB%A5%B7%A5%B9%A5%C6%A5%E0)を調べられる
-
-
-
-### Ubuntu Setting
-
-{% embed url="https://chishiki-motomeru.com/post/20190112/" %}
-
-
-
-### BitLocker RecoveryKey
-
-{% embed url="https://account.microsoft.com/devices/recoverykey" %}
-
-
-
-### Setting Ubuntu
-
-{% embed url="https://qiita.com/taiko19xx/items/d1a001bfc25245b91354" %}
-
-
-
-#### Pinch In / Pinch Out（Zoom）
-
-{% embed url="https://github.com/bulletmark/libinput-gestures/blob/master/README.md" %}
-
-{% embed url="https://qiita.com/onokatio/items/c386da501d11a9735915" %}
-
-
-
-
-
-### WindowsとUbuntuのデュアルブート
-
-{% embed url="https://qiita.com/yo\_kanyukari/items/2a944a300db22482c696" %}
-
-{% embed url="https://www.archlinux.site/2018/02/uefiwindows-10ubuntu.html" %}
-
-{% embed url="https://slacknotebook.com/os-dual-boot-is-a-bad-idea/" %}
-
-{% embed url="https://qiita.com/medalotte/items/4bb5cfa709e93d044f1c" %}
-
-
-
-#### 時刻同期がずれる（デュアルブート環境限定）
-
-{% embed url="https://hosopro.blogspot.com/2016/12/windows10windows-time-service.html" %}
-
-
-
-### UEFIモード
-
-{% embed url="https://www.billionwallet.com/windows10/ueif-bios.html" %}
-
-{% embed url="https://slacknotebook.com/os-dual-boot-is-a-bad-idea/" %}
-
-{% embed url="https://www.dell.com/support/article/jp/ja/jpdhs1/sln301754/ubuntu-%E3%81%8A%E3%82%88%E3%81%B3-windows-8-%E3%81%BE%E3%81%9F%E3%81%AF10%E3%82%92-%E3%81%8A%E4%BD%BF%E3%81%84%E3%81%AE%E3%83%87%E3%83%AB%E8%A3%BD-pc-%E3%81%A7%E3%83%87%E3%83%A5%E3%82%A2%E3%83%AB%E3%83%96%E3%83%BC%E3%83%88%E3%81%A8%E3%81%97%E3%81%A6%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95?lang=ja\#Hard\_Ware" %}
-
-
-
-{% embed url="https://www.aomei.jp/articles/change-legacy-to-uefi.html" %}
-
-
-
-### GRUB
-
-{% embed url="https://wiki.archlinux.jp/index.php/GRUB" %}
-
-
-
-### Hyper-V
-
-{% embed url="https://www.billionwallet.com/windows10/hyper-v-windows10.html" %}
-
-
-
-
+> 　“Real Time”の意味は「最悪応答時間が決まっている」である。具体的には、割り込みが入ってから、ISR（Interuppt Service Routine）経由で当該ルーティン（を実施しているタスク）が実行可能状態になり、処理を開始するまでの所要時間の最悪値が保証されている。これにより、実時間処理が必要な作業を実装することが可能である。
+>
+> * 最悪応答時間を保証する設計となっている
+>
+> 　この最悪応答時間を保証するために、OSあるいはスケジューラで提供される機能は最低限に絞られており、なるべく軽く動くように設計されている。
+>
+> * 仮想メモリは原則的にサポートされない
+>
+> 　RTOSにおいて仮想メモリは原則として非サポートである。これはリアルタイム性を損なうためである（例えばリアルタイム処理が必要なタスクがスワップアウトされたりすると、最悪応答時間を守る事ができなくなる。またページングそのものが決して軽い処理ではないので、このオーバーヘッドは無視できない）。また、メモリアロケーションの仕組みも、リアルタイム性の確保のために動的な仕組みが提供されるケースは少なく、大抵は固定サイズのメモリブロックを割り当てる方式である。メモリ保護そのものはMMUベースのものが提供される。
+>
+> * 複数のタスク間通信が用意される
+>
+> 　タスク間通信に関しては、イベントベース（割り込みなど）のものやポーリングベース（セマフォなど）、メッセージベース（共有メモリなど）のもの、あるいは複数を合体させたもの（Mailboxなど）、さらにはRPCベースのものなど、複数用意されるのが一般的だ。クリティカルセクションなども用意される場合もある。ただこれらの機能は、マイコンがハードウェア的にどこまでそれぞれの機能を実装しているかで性能差があるため、一概に「これが最速」とは言いにくい部分もある。
+>
+> * マルチプロセッサ対応は必須ではない
+>
+> 　マルチプロセッサについては、対応しているものもある。ただしこうした構成では、対称型のマルチプロセッサというケースは珍しく、例えばCortex-M0とCortex-M4といった、異なるマイコンの場合もあり、こうしたケースでは両方のマイコンにそれぞれ別のRTOSが載る（もしくは、片方にはRTOSが載らない）なんてケースもあるため、必ずしもマルチプロセッサ対応は必須では無い。
+>
+> * 機能の取捨選択が可能
+>
+> 　カーネルと一部のコア機能は固定であるが、それ以外の機能は利用する／しないに応じてカスタマイズできるようになっているのが一般的である。例えばTCP/IPのスタックは非常に重いので、IPのみとかIP+UDPとか、IP+TCP（ただし一部）、あるいはそもそも搭載しないといった選択が可能だ。これにより、不要な機能をロードしないことでメモリ利用量を最小に抑えることができる。
+>
+> [![&#x4E00;&#x822C;&#x7684;&#x306A;OS&#x3068;RTOS&#x306E;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x306E;&#x9055;&#x3044;](https://image.itmedia.co.jp/tf/articles/1705/17/hi_rtos01.jpg)](https://image.itmedia.co.jp/l/im/tf/articles/1705/17/l_hi_rtos01.jpg)
+>
+> 　左の図1が一般的なOSのイメージであるが、基本的にハードウェアは全てOSの管理下にあり、そのハードウェアを利用するためのドライバが提供され、さらにミドルウェア（Windows OSで言うなら.NET Frameworkとか）がきちんと用意され、その上で複数のアプリケーションとユーザーインタフェースが動作する。
+>
+> 　ではRTOS（右の図2）は？というと、まずHALやOSは必要最小限のハードウェアしかカバーしないし、その機能もここまで説明した通り最小限である。ドライバは一応OS管理下のハードウェアに関しては存在するが、こちらも最小限である。その上のミドルウェアやネットワークスタックはオプション扱いになっており、後は全部アプリケーションでカバーする、という感じだと考えればいい。
+>
+> #### 主なRTOS、組み込み向けLinuxとの違い
+>
+> 　国内で言えばμITRONやその延長でTOPPERSが広く使われているが、海外ではAVIX（AVIX-RT）、LynxOS（LynuxWorks）、Micrium OS（Micrium）、Nucleus RTOS（Mentor Graphics）、QNX（BlackBerry）、Thread X（expresslogic）、VxWorks（WindRiver）などが利用されている。フリーのRTOS（eCosやFreeRTOSなど）も存在している。
+>
+> 　ちなみに同種のものとして、Linuxをベースにリアルタイム性を付加したRealtime Linux（RTLinuxなど）と、組み込み向けのLinuxであるEmbedded Linuxがある。前者はLinuxのタイマー管理部を利用し、リアルタイムスケジューラを動かすことで特定アプリケーションだけをリアルタイムで動かせるようにしただけのもの。全体としてはLinuxそのものなので、要求されるハードウェア資源はマイコンというよりはPCのレベルに近い。
+>
+> 　後者のEmbedded Linuxは、携帯電話や情報機器向けにLinuxを流用しようという目的で開発されたもので、必要とする機能以外を省けるあたりはRTOSに近く、機器の価格を下げるためもあって、なるべく省メモリで動作するように工夫されている（とはいえRTOSより必要なメモリ量は多い）。しかし、リアルタイム性などでは著しく劣っている。
+>
+> 　このため、Linuxカーネルのみをリアルタイム性の高いマイクロカーネルに置き換えたものも幾つかある。ただそうなると、LinuxのAPIだけを提供すれば良く、Linuxそのものである必要はないという議論も成立するわけで、実際LynxOSやNucleus RTOS、QNXなどはいずれもPOSIX互換のAPIを提供している。そんな訳でEmbedded LinuxとRTOSの境界はやや曖昧になっているのが現状である。
 
