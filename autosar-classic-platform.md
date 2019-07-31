@@ -22,6 +22,10 @@
 
 
 
+#### SoftwareComponet Template
+
+{% file src=".gitbook/assets/autosar\_tps\_softwarecomponenttemplate.pdf" %}
+
 
 
 
