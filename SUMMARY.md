@@ -9,4 +9,5 @@
 * [Cordova](cordva.md)
 * [SLA](sla.md)
 * [Kubernetes](kubernetes.md)
+* [SRE](sre.md)
 
