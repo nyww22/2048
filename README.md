@@ -1,395 +1,101 @@
----
-description: Drone関連仕様を整理するためのページです。
----
+# サーバレスアーキテクチャ
 
-# Drone Development Environment Specification
 
-![APM&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;](.gitbook/assets/apm_ardupilot_mega-1024x768.jpg)
 
-### **Delopment Environment**
+### AWSにおける サーバーレス構成 <a id="p02"></a>
 
-{% embed url="http://dev.px4.io/en/setup/dev\_env\_linux\_ubuntu.html" %}
-
-### Building the Code
+> AWSにおいてのサーバーレス構成は、「Amazon S3、DynamoDB、Lambda これらの活用によって、EC2などの仮想化インスタンスサーバーを使わずにWEBサービスを開発する論理的構造\(アーキテクチャ\)」となります。
+>
+> 「サーバーレス」というのは、Amazon S3、Lambda 等のサービスが、サーバーを使用していない…ということではありません。これらのサービスももちろんAWSサーバー上で動いています。しかし、システム運用の為に、EC2使用時の様に、固定スケールのサーバー領域の常時稼働を必要としている訳ではありません。「サーバーレス」の定義としては、ユーザーがサーバー領域を意識せず、直接利用出来るサービスを活用した構成、と言えるでしょう。
 
-{% embed url="http://dev.px4.io/en/setup/building\_px4.html" %}
+###  AWS の「EC2」と「Lambda」の違い <a id="p03"></a>
 
-> #### Qt Creator on Linux <a id="qt-creator-on-linux"></a>
+> EC2インスタンスを利用する場合、起動直後はOSがインストールされただけの状態となり、システムを稼働させるには、アカウントの初期設定を始め、各種ミドルウェアをインストールするなどの、環境構築が必要となります。しかし、Lambdaを利用した場合、AWSの提供した実行環境の中で起動する為、プログラムさえ用意すれば、すぐに使用が可能となります。
 >
-> Before starting Qt Creator, the [project file](https://cmake.org/Wiki/CMake_Generator_Specific_Information#Code::Blocks_Generator) needs to be created:
+> また、料金も、システムの実行時間のみの課金になりますので、コストの削減が期待出来ます。
 >
-> ```text
-> cd ~/src/Firmware
-> mkdir ../Firmware-build
-> cd ../Firmware-build
-> cmake ../Firmware -G "CodeBlocks - Unix Makefiles"
-> ```
+> #### EC2 インスタンス
 >
-> Then load the CMakeLists.txt in the root firmware folder via **File &gt; Open File or Project** \(Select the CMakeLists.txt file\).
+> ![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;&#x6BD4;&#x8F03;](https://www.skyarch.net/iot/asset/serverless_icon01.png?v=20190416)
 >
-> After loading, the **play** button can be configured to run the project by selecting 'custom executable' in the run target configuration and entering 'make' as executable and 'upload' as argument.
-
-{% hint style="info" %}
-上記記述箇所に対しての手順追加
-
-QT Creatorに対して、以下の設定手順を追加した上で、Makeを実施しないと、uploadをMakeするルールがないとのエラーが発生する。
-
-1. Qt Creatorを起動
-2. Qt Creator画面左側のバーから「プロジェクト」を選択
-3. 「プロジェクトを開く」でpx4/firmware直下の"CMakeLists.txt"を選択し、「開く」
-4. 「ビルド設定」→ビルドステップの「詳細」をクリック
-5. 隠れていた項目が展開されるので、その中の「ターゲット:」から「jmavsim
-
-   」を選択
-
-6. Qt Creator画面左下の「実行」をクリック
-
-[https://seesaawiki.jp/px4/d/qt%A4%C7%A4%CE%A5%D3%A5%EB%A5%C9%A4%C8%BC%C2%B9%D4%28jMAVSim%29](https://seesaawiki.jp/px4/d/qt%A4%C7%A4%CE%A5%D3%A5%EB%A5%C9%A4%C8%BC%C2%B9%D4%28jMAVSim%29)
-
-
-
-Javaが起動して3D画面が表示されれば設定は問題なく実施できている。
-{% endhint %}
-
-
-
-### Debugging & Logging
-
-gdbおよびlldbを用いたdebugging方法を記載します。
-
-{% embed url="https://dev.px4.io/en/debug/simulation\_debugging.html" %}
-
-
-
-#### QTCreator（IDE）との連携
-
-gdbinitファイルに、以下の記載を追加する。
-
-```text
-add-auto-load-safe-path <path>/src/Firmware-build/tmp/rootfs/.gdbinit
-```
-
-
-
-QT Creatrorから「jmavsim\_\_\_gdb」ビルドオプションを追加する。
-
-![](.gitbook/assets/image%20%282%29.png)
-
-{% hint style="info" %}
-ログについて
-
-> warning: File "/home/takuto/shadow-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
+> * 汎用的なサーバー
+> * 起動直後はOSインストールのみの状態
+> * 初期設定、環境設定が必要
+> * システムの運用、保守、監視が必要
+> * 利用出来るのは契約したサーバーの容量
+> * 一定料金。仮想サーバー稼働時間内の代金
 >
-> To enable execution of this file add
+> #### Lambda
 >
->  add-auto-load-safe-path /home/takuto/shadow-build/tmp/rootfs/.gdbinit
+> ![Lambda](https://www.skyarch.net/iot/asset/serverless_icon02.png?v=20190416)
 >
-> line to your configuration file "/home/takuto/.gdbinit".
-{% endhint %}
-
+> * インフラ環境の整備、必要無し
+> * 実行環境は、AWSが提供
+> * ミドルウェア等の脆弱性対応不要
+> * トリガを選択し、プログラムをアップロードすれば直ちに動作
+> * 自動スケーリング対応
+> * システムを実行時間（100ミリ秒単位）で課金
+> * 利用されなければ無課金
 
 
-#### threadのアタッチを許可するための設定を変更
 
-以下引用
+### 「Lambda」とAWSサービス <a id="p04"></a>
 
-> In Maverick Meerkat \(10.10\) Ubuntu introduced a patch to disallow ptracing of non-child processes by non-root users - ie. only a process which is a parent of another process can ptrace it for normal users - whilst root can still ptrace every process. Hence why you can use gdb to attach via sudo still.
+> 「Lambda」は、AWS環境にすでに用意されている多種多様なサービスと連携して利用する事が出来ます。基本的なWEBサービスの土台はそろっていますので、最小限のプログラミングでシステムを構築する事ができ、運用を始める事が出来ます。
 >
-> You can temporarily disable this restriction \(and revert to the old behaviour allowing your user to ptrace \(gdb\) any of their other processes\) by doing:
+> #### 「Lambda」に組み合わせて使用出来る代表的なAWSサービス
 >
-> ```text
-> echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-> ```
->
-> To permanently allow it edit /etc/sysctl.d/10-ptrace.conf and change the line:
->
-> ```text
-> kernel.yama.ptrace_scope = 1
-> ```
->
-> To read
->
-> ```text
-> kernel.yama.ptrace_scope = 0
-> ```
->
-> For some background on why this change was made, see the [Ubuntu wiki](https://wiki.ubuntu.com/SecurityTeam/Roadmap/KernelHardening#ptrace%20Protection)
-
-{% embed url="https://askubuntu.com/questions/41629/after-upgrade-gdb-wont-attach-to-process/41656\#41656" %}
-
-
-
-VS Code（IDE）を使ったステップ実行について：　未確認
-
-{% embed url="https://github.com/PX4/Firmware/issues/11726" %}
+> ![AWS Lambda](https://www.skyarch.net/iot/asset/serverless_lambda01.png?v=20190416)
 
-QT（IDE）とDebugging連携について：　未確認
 
-{% embed url="https://discuss.px4.io/t/debug-posix-build-in-qt/2981" %}
 
-jmavsim\_\_\_debugの記載箇所を参照：未確認
+### 「Lambda」の特性 <a id="p05"></a>
 
-{% embed url="https://www.bountysource.com/teams/px4/issues?tracker\_ids=38809796" %}
-
-
-
-### Gazebo Debugging\(IDE連携\)
+> 「Lambda」は設定されているプログラムを起動させる実行環境となります。起動条件が整った際に、プログラムをLambda環境に呼び出し、実行されます。この為、Lambdaでは、実行した時間とその回数のみの課金となります。ですから、待機時間の長いシステムや、CPUの負荷が時間帯によって差のあるシステムなどに導入すれば、大幅なコストの削減が期待できます。
+>
+> しかし、ゲームアプリや配信系サービスなど、常にシステムの動いている必要のあるサービスや、高負荷な状態が長時間続くシステムなどでは、Lambda、すなわちサーバーレス構成は不向きなものと言えます。
 
-{% embed url="https://github.com/PX4/Devguide/blob/master/en/simulation/gazebo.md" %}
 
-> \(IDEコンパイル情報\)
->
-> Scanning dependencies of target jmavsim\_\_\_gdb
->
-> SITL ARGS
->
-> sitl\_bin: /home/takuto/shadow-build/bin/px4
->
-> debugger: gdb
->
-> program: jmavsim
->
-> model: none
->
-> src\_path: /home/takuto/shadow
->
-> build\_path: /home/takuto/shadow-build
->
-> empty model, setting iris as default
->
-> SITL COMMAND: "/home/takuto/shadow-build/bin/px4" "/home/takuto/shadow"/ROMFS/px4fmu\_common -s etc/init.d-posix/rcS -t "/home/takuto/shadow"/test\_data
->
-> GNU gdb \(Ubuntu 8.1-0ubuntu3\) 8.1.0.20180409-git
->
-> Copyright \(C\) 2018 Free Software Foundation, Inc.
->
-> License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
->
-> This is free software: you are free to change and redistribute it.
->
-> There is NO WARRANTY, to the extent permitted by law. Type "show copying"
->
-> and "show warranty" for details.
->
-> This GDB was configured as "x86\_64-linux-gnu".
->
-> Type "show configuration" for configuration details.
->
-> For bug reporting instructions, please see:
->
-> &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
->
-> Find the GDB manual and other documentation resources online at:
->
-> &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
->
-> For help, type "help".
->
-> Type "apropos word" to search for commands related to "word"...
->
-> Reading symbols from /home/takuto/shadow-build/bin/px4...Buildfile: /home/takuto/shadow/Tools/jMAVSim/build.xml
->
-> done.
->
-> warning: File "/home/takuto/shadow-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
->
-> To enable execution of this file add
->
->  add-auto-load-safe-path /home/takuto/shadow-build/tmp/rootfs/.gdbinit
->
-> line to your configuration file "/home/takuto/.gdbinit".
->
-> To completely disable this security protection add
->
->  set auto-load safe-path /
->
-> line to your configuration file "/home/takuto/.gdbinit".
->
-> For more information about this security protection see the
->
-> "Auto-loading safe path" section in the GDB manual. E.g., run from the shell:
->
->  info "\(gdb\)Auto-loading safe path"
->
-> \(gdb\)
->
-> make\_dirs:
->
-> compile:
->
-> create\_run\_jar:
->
-> copy\_res:
->
-> BUILD SUCCESSFUL
->
-> Total time: 0 seconds
->
-> Options parsed, starting Sim.
->
-> Starting GUI...
 
-コンパイル情報（参考まで）
+### サーバーレス構造・実績 <a id="p06"></a>
 
-> SITL ARGS
->
-> sitl\_bin: /home/takuto/src/Firmware-build/bin/px4
->
-> debugger: gdb
->
-> program: jmavsim
->
-> model: none
->
-> src\_path: /home/takuto/src/Firmware
->
-> build\_path: /home/takuto/src/Firmware-build
->
-> empty model, setting iris as default
->
-> SITL COMMAND: "/home/takuto/src/Firmware-build/bin/px4" "/home/takuto/src/Firmware"/ROMFS/px4fmu\_common -s etc/init.d-posix/rcS -t "/home/takuto/src/Firmware"/test\_data
->
-> GNU gdb \(Ubuntu 7.11.1-0ubuntu1~16.5\) 7.11.1
+> #### 大量のアクセスを捌くアーキテクチャ
 >
-> Copyright \(C\) 2016 Free Software Foundation, Inc.
+> 下記はある企業のサイトで実装した、サーバーレスの導入例です。ネットでの注文のデータを今後に活かす為、データベースに蓄積するシステムになります。これをオンプレミス\(自社運用\)で賄おうとすると膨大なサーバーが必要となります。そこでAWSを利用した実装を考察しましたが、システムの常時起動、AutoScaleによる負荷の対応、RDSの同時接続数などの課題が上りました。
 >
-> License GPLv3+: GNU GPL version 3 or later &lt;http://gnu.org/licenses/gpl.html&gt;
+> ![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;](https://www.skyarch.net/iot/asset/serverless_lambda02.png?v=20190416)
 >
-> This is free software: you are free to change and redistribute it.
+> 上記を踏まえ、サーバーレス構成での実装です。API Gatewayでリクエストを受けた際にLambdaを起動。処理したデータをAWS環境のSQSにてキューとして一旦保存。このキューをもう一つのLambdaの定期実行によりチェックして、データべースに保存する、という構成です。リクエストと定期時実行によるLambdaの起動で、運用コストの削減が期待でき、キューイングによる保存処理によって、データベースへの負荷を軽減します。![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;](https://www.skyarch.net/iot/asset/serverless_lambda03.png?v=20190416)
 >
-> There is NO WARRANTY, to the extent permitted by law. Type "show copying"
+> このように部分部分でシステムを分割し、疎結合なアーキテクチャを採用する事で、下記のようなメリットを享受する事ができます。
 >
-> and "show warranty" for details.
+> * 大量のアクセスを捌くことが可能となる
+> * 並行開発が可能となる
+> * メンテナンスを容易に実施出来る
 >
-> This GDB was configured as "x86\_64-linux-gnu".
+> #### サーバレスアーキテクチャの動作確認
 >
-> Type "show configuration" for configuration details.
+> リクエスト結果をS3へファイル保存を行うサーバレス構成を元にサーバレス構成の監視方法をご説明します。
 >
-> For bug reporting instructions, please see:
->
-> &lt;http://www.gnu.org/software/gdb/bugs/&gt;.
->
-> Find the GDB manual and other documentation resources online at:
->
-> &lt;http://www.gnu.org/software/gdb/documentation/&gt;.
->
-> For help, type "help".
->
-> Type "apropos word" to search for commands related to "word"...
->
-> Reading symbols from /home/takuto/src/Firmware-build/bin/px4...Buildfile: /home/takuto/src/Firmware/Tools/jMAVSim/build.xml
->
-> done.
->
-> warning: File "/home/takuto/src/Firmware-build/tmp/rootfs/.gdbinit" auto-loading has been declined by your \`auto-load safe-path' set to "$debugdir:$datadir/auto-load".
->
-> To enable execution of this file add
->
->  add-auto-load-safe-path /home/takuto/src/Firmware-build/tmp/rootfs/.gdbinit
->
-> line to your configuration file "/home/takuto/.gdbinit".
->
-> To completely disable this security protection add
->
->  set auto-load safe-path /
->
-> line to your configuration file "/home/takuto/.gdbinit".
->
-> For more information about this security protection see the
->
-> "Auto-loading safe path" section in the GDB manual. E.g., run from the shell:
->
->  info "\(gdb\)Auto-loading safe path"
-
-{% embed url="https://dev.px4.io/en/simulation/gazebo.html" %}
-
-
-
-#### IDE Debugging : 未確認
-
-{% embed url="https://discuss.px4.io/t/use-an-ide-to-debug-px4-modules/8076" %}
-
-{% embed url="https://discuss.px4.io/t/eclipse-debugging-sitl/9465" %}
-
-
-
-
-
-### **SnapDragon Development Environment**
-
-{% embed url="https://docs.px4.io/en/getting\_started/" %}
-
-{% embed url="https://docs.px4.io/en/flight\_controller/snapdragon\_flight\_dev\_environment\_installation.html" %}
-
-{% embed url="https://docs.px4.io/en/flight\_controller/snapdragon\_flight\_software\_installation.html" %}
-
-> PX4 ハードウェア構成
+> ![&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30EC;&#x30B9;](https://www.skyarch.net/iot/asset/serverless_lambda04.png?v=20190416)
 >
-> ![](.gitbook/assets/pixhawk_infographic2.jpg)
-
-{% embed url="http://pixhawk.org/" %}
-
-\*\*\*\*
-
-### **QGroundControl**
-
-#### **Download & Install**
-
-{% embed url="https://docs.qgroundcontrol.com/en/getting\_started/download\_and\_install.html" %}
-
-#### **Others**
+> Lambdaより、定期実行でサンプルリクエストをして、正しい流れでS3へのデータ保存が出来ているかを監視します。異常が検知された際には、管理者へアラートメールが送られます。
 
-{% embed url="https://docs.px4.io/en/config/" %}
 
-{% embed url="https://dev.qgroundcontrol.com/en/" %}
 
-{% embed url="https://docs.qgroundcontrol.com/en/" %}
-
-{% embed url="https://sdk.dronecode.org/en/examples/fly\_mission\_qgc\_plan.html" %}
-
-
-
-### **DroneCode**
-
-{% embed url="https://www.dronecode.org/" %}
-
-Dev Guide
-
-{% embed url="https://www.dronecode.org/documentation/" %}
-
-User GuideArduPilot
-
-{% embed url="http://ardupilot.org/" %}
-
-
-
-### **Pix4AutoPilot**
-
-{% embed url="https://docs.px4.io/en/getting\_started/" %}
-
-{% embed url="https://dev.px4.io/en/setup/config\_initial.html" %}
-
-{% embed url="https://docs.px4.io/en/getting\_started/frame\_selection.html" %}
-
-
-
-### **DroneCode 参考サイト**
-
-> APMはマルチコプターやラジコン飛行機で、オートパイロットを実現するためのプラットフォームです。このプラットフォームは、航空機の機体に設置するフライトコントローラー（フラコン）に搭載するための「ファームウェア」、パソコンやタブレットなど地上側の端末から機体を操作するグラウンドコントロールステーション（Ground Control Station : GCS）の役割を果たす「ソフトウェア」、そして機体に搭載するフライトコントローラーである「ハードウェア」から構成されています。
->
-> APMはさらに上位の開発プロジェクト「ドローンコード（Dronecode）」の一部でもあります。Dronecodeはオープンソースのドローン開発向けプラットフォームであり、世界中の企業が協力して、ドローン開発のデファクトスタンダードを作ろうとしています。以下でその内容を詳しく説明しています。
+### Useful Frameworks for Serverless Web Apps
 
-{% embed url="https://ailerocket.com/dronecode-introduction/" %}
+#### Java - HttpServlet, Spring, Spark and Jersey
 
-{% embed url="https://qiita.com/akachochin/items/03a16038b3c20176c0a4" %}
+{% embed url="https://github.com/awslabs/aws-serverless-java-container" %}
 
-{% embed url="https://ailerocket.com/apm-ardupilot-autopilot/" %}
 
-{% embed url="https://www.notion.so/tetra3/3ab3fe9ab2154760bbe94962c1e04c7c" %}
 
+### 参考サイト
 
+{% embed url="https://dev.classmethod.jp/cloud/aws/aws-reinvent-arc401/" %}
 
-\*\*\*\*
+{% embed url="https://www.skyarch.net/iot/serverless.html" %}
 
 
 
