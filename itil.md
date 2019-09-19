@@ -1,3 +1,7 @@
+---
+description: Information Technology Infrastracture Library（アイティル）
+---
+
 # ITIL
 
 > ITサービス管理を考える枠組みとして、幅広く利用されているのが、ITIL \(Information Technology Infrastructure Library\)なのです。
