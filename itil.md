@@ -10,6 +10,12 @@ description: Information Technology Infrastracture Library（アイティル）
 
 
 
+### ITSMS関連文書
+
+{% embed url="https://www.jipdec.or.jp/library/publications/smpo\_doc.html\#12" %}
+
+
+
 
 
 {% embed url="https://qiita.com/itagakishintaro/items/eeb8b3d6df6d5e8dc21d" %}
