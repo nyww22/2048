@@ -24,6 +24,8 @@ description: Information Technology Infrastracture Library（アイティル）
 
 {% embed url="https://www.itpreneurs.co.jp/" %}
 
+{% embed url="https://www.bspsol.com/corporate/" %}
+
 
 
 ### ITSM管理ツール（パッケージ提供）
