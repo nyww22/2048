@@ -58,5 +58,15 @@ description: Information Technology Infrastracture Library（アイティル）
 
 
 
+### ITILの一般ユーザまとめ資料
+
+{% embed url="http://itil.osaka.jp/wordpress/itil-scp-report\_201710-2/" %}
+
+
+
+
+
+
+
 
 
