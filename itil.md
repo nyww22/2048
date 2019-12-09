@@ -78,6 +78,12 @@ description: Information Technology Infrastracture Library（アイティル）
 
 
 
+### ITIL Foundation試験
+
+{% embed url="https://proengineer.internous.co.jp/content/columnfeature/11034\#section500" %}
+
+
+
 
 
 
