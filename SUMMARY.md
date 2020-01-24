@@ -13,4 +13,5 @@
 * [ITIL](itil.md)
 * [ISO/IEC20000, JIS20000](iso-iec20000-jis20000.md)
 * [CI/CD](ci-cd.md)
+* [認証・認可](ren-zheng-ren-ke.md)
 
