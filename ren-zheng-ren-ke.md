@@ -6,6 +6,12 @@
 
 {% embed url="https://oauth.jp/blog/2016/02/25/oauth-authentication/" %}
 
+### RP \| Relying Party \| アールピーとは
+
+{% embed url="https://support.trustlogin.com/hc/ja/articles/231451867-RP-Relying-Party-%E3%82%A2%E3%83%BC%E3%83%AB%E3%83%94%E3%83%BC" %}
+
+
+
 
 
 ### AWS Cognito
