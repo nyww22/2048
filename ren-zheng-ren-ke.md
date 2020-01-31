@@ -10,6 +10,8 @@
 
 {% embed url="https://support.trustlogin.com/hc/ja/articles/231451867-RP-Relying-Party-%E3%82%A2%E3%83%BC%E3%83%AB%E3%83%94%E3%83%BC" %}
 
+{% embed url="https://www.ogis-ri.co.jp/otc/hiroba/technical/openid-connect/chap3.html" %}
+
 
 
 
