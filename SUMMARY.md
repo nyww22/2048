@@ -15,4 +15,5 @@
 * [CI/CD](ci-cd.md)
 * [認証・認可](ren-zheng-ren-ke.md)
 * [パブリッククラウド/プライベートクラウド](paburikkukuraudopuraibtokuraudo.md)
+* [AWS Architecture Best Practice](aws-architecture-best-practice.md)
 
