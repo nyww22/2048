@@ -8,3 +8,7 @@
 
 
 
+{% embed url="https://dev.classmethod.jp/articles/difference-between-kinesis-streams-and-kinesis-firehose/" %}
+
+
+
