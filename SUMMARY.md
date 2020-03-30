@@ -16,4 +16,5 @@
 * [認証・認可](ren-zheng-ren-ke.md)
 * [パブリッククラウド/プライベートクラウド](paburikkukuraudopuraibtokuraudo.md)
 * [AWS Architecture Best Practice](aws-architecture-best-practice.md)
+* [AWS IoT Core](aws-iot-core.md)
 
