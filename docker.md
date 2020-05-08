@@ -8,6 +8,10 @@
 
 ### \*\*\*\*[**https://speakerdeck.com/ktam1219/yaruze-kuberneteshanzuon**](https://speakerdeck.com/ktam1219/yaruze-kuberneteshanzuon)\*\*\*\*
 
+### \*\*\*\*[**https://qiita.com/Kta-M/items/ce475c0063d3d3f36d5d**](https://qiita.com/Kta-M/items/ce475c0063d3d3f36d5d)\*\*\*\*
+
+### \*\*\*\*
+
 ### \*\*\*\*
 
 ### **Trouble Shooting**
