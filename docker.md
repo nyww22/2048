@@ -6,6 +6,8 @@
 
 {% embed url="https://qiita.com/zhangyangfeng1994/items/e1436c3844e6b30b4028" %}
 
+### \*\*\*\*[**https://speakerdeck.com/ktam1219/yaruze-kuberneteshanzuon**](https://speakerdeck.com/ktam1219/yaruze-kuberneteshanzuon)\*\*\*\*
+
 ### \*\*\*\*
 
 ### **Trouble Shooting**
