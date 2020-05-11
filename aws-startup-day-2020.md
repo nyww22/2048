@@ -1,0 +1,8 @@
+# AWS Startup Day 2020
+
+[https://aws.amazon.com/jp/startups/startupday-2019/?sc\_channel=em&sc\_campaign=em\_startupday\_ondemand\_2019&sc\_medium=em\_startupday\_ondemand\_2019&sc\_content=event\_ev\_field&sc\_geo=japn&sc\_country=jp&sc\_outcome=event&&trkCampaign=startupday\_ondemand\_2019&trk=em\_startupday\_ondemand\_2019&mkt\_tok=eyJpIjoiTUdZeU16QmxNMlpoTVdJNCIsInQiOiJvQ3VPT052MVBscjNnWnZLZmtBNHBqcUNhVDRsK0xqcjdKcU1XNHJweElVeTlZSFc4NFFieVZGZDl1Um0xVEhQRGZmWEZZYXU1Q1VqbG9UUm9xMzJFU1FLelIxVkJVYkx3MXJOYzJFeWJFMTgxa1NjQzl2OEV0aDlneWtVZklCa3dyYVNWUm9YY2lWNmhLRUJtTmE5a3c9PSJ9](https://aws.amazon.com/jp/startups/startupday-2019/?sc_channel=em&sc_campaign=em_startupday_ondemand_2019&sc_medium=em_startupday_ondemand_2019&sc_content=event_ev_field&sc_geo=japn&sc_country=jp&sc_outcome=event&&trkCampaign=startupday_ondemand_2019&trk=em_startupday_ondemand_2019&mkt_tok=eyJpIjoiTUdZeU16QmxNMlpoTVdJNCIsInQiOiJvQ3VPT052MVBscjNnWnZLZmtBNHBqcUNhVDRsK0xqcjdKcU1XNHJweElVeTlZSFc4NFFieVZGZDl1Um0xVEhQRGZmWEZZYXU1Q1VqbG9UUm9xMzJFU1FLelIxVkJVYkx3MXJOYzJFeWJFMTgxa1NjQzl2OEV0aDlneWtVZklCa3dyYVNWUm9YY2lWNmhLRUJtTmE5a3c9PSJ9)
+
+
+
+
+
