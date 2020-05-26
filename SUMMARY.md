@@ -22,4 +22,5 @@
 * [Docker](docker.md)
 * [AWS Startup Day 2020](aws-startup-day-2020.md)
 * [AWS Innovate 2020](aws-innovate-2020.md)
+* [Kinesis](kinesis.md)
 
