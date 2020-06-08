@@ -1,5 +1,7 @@
 # Cognito
 
+{% embed url="https://dev.classmethod.jp/articles/api-gateway-cognito-auth/" %}
+
 
 
 {% embed url="https://qiita.com/MasanoriMT/items/ce96318d62f5a0e34feb" %}
