@@ -8,5 +8,7 @@
 
 {% embed url="https://blog.u-chan-chi.com/post/vue-cognito/" %}
 
+{% embed url="https://programmagick.com/blogs/aws\_cognito\_react/" %}
+
 
 
