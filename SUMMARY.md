@@ -28,4 +28,5 @@
 * [API Gateway](api-gateway.md)
 * [Web API](web-api.md)
 * [フェデレーション](federshon.md)
+* [SORACOM](soracom.md)
 

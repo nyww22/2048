@@ -68,11 +68,3 @@
 >
 > 個々のサービスについて、どの情報を連携させるのか、ユーザー側が適正に制御しながら、シームレスに効率よく作業を進められる、提供データをもとにしたサービスの利便性向上も促進されていく、そうした柔軟で理想的なネットワーク環境を構築し、安全・適正な出入りを管理する基盤として働くよう工夫されているのです。
 
-{% embed url="https://qiita.com/sgmryk/items/0f5734a2a6991a6a1873" %}
-
-{% embed url="https://qiita.com/TakahikoKawasaki/items/498ca08bbfcc341691fe" %}
-
-{% embed url="https://qiita.com/TakahikoKawasaki/items/63ed4a9d8d6e5109e401" %}
-
-
-
