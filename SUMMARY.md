@@ -24,4 +24,6 @@
 * [AWS Innovate 2020](aws-innovate-2020.md)
 * [Kinesis](kinesis.md)
 * [Cognito](cognito.md)
+* [API Gateway](api-gateway.md)
+* [Web API](web-api.md)
 

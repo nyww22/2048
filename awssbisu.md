@@ -1,5 +1,9 @@
 # AWSサービス
 
+{% embed url="https://docs.microsoft.com/ja-jp/azure/architecture/aws-professional/services" %}
+
+### 
+
 ### AWS SAM Local
 
 {% embed url="https://github.com/awslabs/aws-sam-cli" %}
