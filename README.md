@@ -1,5 +1,7 @@
 # サーバレスアーキテクチャ
 
+{% embed url="https://aws.amazon.com/jp/blogs/news/aws-serverless-application-model-sam-command-line-interface-build-test-and-debug-serverless-apps-locally/" %}
+
 
 
 ### AWSにおける サーバーレス構成 <a id="p02"></a>
