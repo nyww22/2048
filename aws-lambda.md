@@ -45,5 +45,7 @@ AWS LambdaとRDBMSの相性が悪いのは何故か？
 
 {% embed url="https://dev.classmethod.jp/cloud/aws/lambda-memory-alloc-and-coldstart/" %}
 
+{% embed url="https://qiita.com/morimop/items/cb5af1131571ba6361e2" %}
+
 
 
