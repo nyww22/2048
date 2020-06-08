@@ -27,4 +27,5 @@
 * [Cognito](cognito.md)
 * [API Gateway](api-gateway.md)
 * [Web API](web-api.md)
+* [フェデレーション](federshon.md)
 
