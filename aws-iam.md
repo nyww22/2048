@@ -1,7 +1,5 @@
 # AWS IAM
 
-{% embed url="https://qiita.com/kzykmyzw/items/ca0c3276dfebb401f7d8" %}
-
 
 
 {% embed url="https://dev.classmethod.jp/articles/cm-advent-calendar-2015-getting-started-again-aws-iam/" %}
