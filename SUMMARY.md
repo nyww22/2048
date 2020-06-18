@@ -30,4 +30,5 @@
 * [フェデレーション](federshon.md)
 * [SORACOM](soracom.md)
 * [AWS IoT Greengrass](aws-iot-greengrass.md)
+* [Athena](athena.md)
 
