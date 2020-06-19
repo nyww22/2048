@@ -31,4 +31,5 @@
 * [SORACOM](soracom.md)
 * [AWS IoT Greengrass](aws-iot-greengrass.md)
 * [Athena](athena.md)
+* [AWS IoT Device SDK](aws-iot-device-sdk.md)
 
