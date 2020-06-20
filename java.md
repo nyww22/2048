@@ -6,6 +6,8 @@
 
 > プラグインダウンロード先：設定URL  
 > [https://sourceforge.net/projects/ermaster/files/ermaster/](https://sourceforge.net/projects/ermaster/files/ermaster/)
+>
+> [http://ermaster.sourceforge.net/update-site](http://ermaster.sourceforge.net/update-site)
 
 
 
