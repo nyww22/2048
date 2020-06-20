@@ -16,5 +16,7 @@
 
 {% embed url="https://dev.classmethod.jp/articles/aws-iot-mqtt-over-websocket-sigv4/" %}
 
+{% embed url="https://dev.classmethod.jp/articles/aws-iot-things-shadow/" %}
+
 
 
