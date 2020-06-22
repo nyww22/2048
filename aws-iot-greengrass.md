@@ -14,6 +14,8 @@
 
 {% embed url="https://hacknote.jp/archives/49429/" %}
 
+{% embed url="https://aws.amazon.com/jp/blogs/news/how-to-bridge-mosquitto-mqtt-broker-to-aws-iot/" %}
+
 
 
 
