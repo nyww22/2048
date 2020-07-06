@@ -37,4 +37,5 @@
 * [GraphQL](graphql.md)
 * [負荷分散](fu-he-fen-san.md)
 * [AWS Black Belt Online Seminar](aws-black-belt-online-seminar.md)
+* [AWS Fargate](aws-fargate.md)
 
