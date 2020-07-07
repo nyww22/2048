@@ -8,5 +8,7 @@
 
 
 
+{% embed url="https://github.com/jawsug-container/hands-on/tree/master/fargate" %}
+
 
 
