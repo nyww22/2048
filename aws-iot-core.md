@@ -4,6 +4,8 @@
 
 {% embed url="https://qiita.com/moritalous/items/3fb33673afe42c2ebca5" %}
 
+{% embed url="https://aws.amazon.com/jp/blogs/news/how-to-automate-onboarding-of-iot-devices-to-aws-iot-core-at-scale-with-fleet-provisioning/" %}
+
 
 
 ### 耐障害性
