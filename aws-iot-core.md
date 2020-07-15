@@ -6,6 +6,8 @@
 
 {% embed url="https://aws.amazon.com/jp/blogs/news/how-to-automate-onboarding-of-iot-devices-to-aws-iot-core-at-scale-with-fleet-provisioning/" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/freertos/latest/userguide/ota-cli-workflow.html" %}
+
 
 
 ### 耐障害性
