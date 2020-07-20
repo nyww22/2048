@@ -8,6 +8,8 @@
 
 {% embed url="https://docs.aws.amazon.com/ja\_jp/freertos/latest/userguide/ota-cli-workflow.html" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/iot/latest/developerguide/create-manage-jobs.html" %}
+
 {% embed url="https://qiita.com/tmiki/items/55b7baba9cef5f444b25" %}
 
 
