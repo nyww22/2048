@@ -39,4 +39,5 @@
 * [AWS Black Belt Online Seminar](aws-black-belt-online-seminar.md)
 * [AWS Fargate](aws-fargate.md)
 * [AWS 法規関連](aws-fa-gui-guan-lian.md)
+* [Azure Sphere](azure-sphere.md)
 
