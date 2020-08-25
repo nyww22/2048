@@ -41,4 +41,5 @@
 * [AWS 法規関連](aws-fa-gui-guan-lian.md)
 * [Azure Sphere](azure-sphere.md)
 * [CloudWatch Logs](cloudwatch-logs.md)
+* [DynamoDB Stream](dynamodb-stream.md)
 
