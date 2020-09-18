@@ -12,9 +12,9 @@
 
 {% embed url="https://www.ogis-ri.co.jp/otc/hiroba/technical/openid-connect/chap3.html" %}
 
+{% embed url="https://thinkit.co.jp/article/17685" %}
 
-
-
+### 
 
 ### AWS Cognito
 
