@@ -1,24 +1,24 @@
 # DynamoDB
 
-![](.gitbook/assets/image%20%2810%29.png)
+![](.gitbook/assets/image%20%2823%29.png)
 
-![](.gitbook/assets/image%20%2811%29.png)
+![](.gitbook/assets/image%20%2832%29.png)
 
-![](.gitbook/assets/image%20%2813%29.png)
+![](.gitbook/assets/image%20%2835%29.png)
 
 ![](.gitbook/assets/image%20%287%29.png)
 
 ![](.gitbook/assets/image%20%286%29.png)
 
-![](.gitbook/assets/image%20%288%29.png)
+![](.gitbook/assets/image%20%2811%29.png)
 
-![](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image%20%2819%29.png)
 
 #### 
 
 #### Design Pattern
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](.gitbook/assets/image%20%2833%29.png)
 
 Relational DB   
 正規化が重要。データは柔軟にクエリができる。  
@@ -30,6 +30,68 @@ DynamoDB
 
   
   
+
+
+![](.gitbook/assets/image%20%2821%29.png)
+
+![](.gitbook/assets/image%20%288%29.png)
+
+![](.gitbook/assets/image%20%2837%29.png)
+
+![](.gitbook/assets/image%20%2820%29.png)
+
+![](.gitbook/assets/image%20%2810%29.png)
+
+FILTERはあくまでも全部取得して、抜き出すので、非常にコストがかかる。  
+  
+
+
+![](.gitbook/assets/image%20%289%29.png)
+
+![](.gitbook/assets/image%20%2816%29.png)
+
+![](.gitbook/assets/image%20%2831%29.png)
+
+FILTERより圧倒的にコストが安くなる方法。
+
+
+
+![](.gitbook/assets/image%20%2824%29.png)
+
+![](.gitbook/assets/image%20%2834%29.png)
+
+![](.gitbook/assets/image%20%2812%29.png)
+
+![](.gitbook/assets/image%20%2822%29.png)
+
+![](.gitbook/assets/image%20%2815%29.png)
+
+![](.gitbook/assets/image%20%2826%29.png)
+
+![](.gitbook/assets/image%20%2825%29.png)
+
+![](.gitbook/assets/image%20%2830%29.png)
+
+
+
+![](.gitbook/assets/image%20%2829%29.png)
+
+![](.gitbook/assets/image%20%2817%29.png)
+
+![](.gitbook/assets/image%20%2827%29.png)
+
+![](.gitbook/assets/image%20%2813%29.png)
+
+![](.gitbook/assets/image%20%2828%29.png)
+
+![](.gitbook/assets/image%20%2818%29.png)
+
+データサイズが大きいものということで、S3と連携させる方法もある。
+
+
+
+![](.gitbook/assets/image%20%2814%29.png)
+
 
 
 
