@@ -43,4 +43,5 @@
 * [CloudWatch Logs](cloudwatch-logs.md)
 * [DynamoDB Stream](dynamodb-stream.md)
 * [AWS サポート](aws-sapto.md)
+* [DynamoDB](dynamodb.md)
 
