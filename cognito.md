@@ -2,6 +2,10 @@
 
 {% embed url="https://dev.classmethod.jp/articles/api-gateway-cognito-auth/" %}
 
+{% embed url="https://aws.amazon.com/jp/premiumsupport/knowledge-center/cognito-user-pool-group/" %}
+
+
+
 
 
 {% embed url="https://qiita.com/MasanoriMT/items/ce96318d62f5a0e34feb" %}
