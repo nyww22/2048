@@ -44,4 +44,5 @@
 * [DynamoDB Stream](dynamodb-stream.md)
 * [AWS サポート](aws-sapto.md)
 * [DynamoDB](dynamodb.md)
+* [DynamoDB](dynamodb-1.md)
 
