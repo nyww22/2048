@@ -240,6 +240,12 @@ service uhttpd restart
 
 ![](.gitbook/assets/image%20%286%29.png)
 
+\[有効\]で設定する。
+
+![](.gitbook/assets/image%20%287%29.png)
+
+
+
 
 
 
