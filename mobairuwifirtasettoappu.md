@@ -260,6 +260,10 @@ service uhttpd restart
 
 
 
+### kmod-usb-net-asix-ax88179パッケージインストール
+
+
+
 
 
 
