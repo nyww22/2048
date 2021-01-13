@@ -230,19 +230,31 @@ service uhttpd restart
 
 ```
 
-![](.gitbook/assets/image%20%284%29.png)
+![](.gitbook/assets/image%20%287%29.png)
 
 編集ボタンを押下する。
 
-![](.gitbook/assets/image%20%285%29.png)
+![](.gitbook/assets/image%20%286%29.png)
 
 \[インターフェース設定\]-\[無線セキュリティ\]を変更する
 
-![](.gitbook/assets/image%20%286%29.png)
+![](.gitbook/assets/image%20%284%29.png)
+
+![](.gitbook/assets/image%20%289%29.png)
+
+![](.gitbook/assets/image%20%285%29.png)
 
 \[有効\]で設定する。
 
-![](.gitbook/assets/image%20%287%29.png)
+![](.gitbook/assets/image%20%288%29.png)
+
+\[再起動\]を行う。
+
+接続先のパスフレーズ：405BD8BA50EB
+
+
+
+
 
 
 
