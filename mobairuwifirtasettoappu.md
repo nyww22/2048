@@ -254,6 +254,12 @@ service uhttpd restart
 
 
 
+### その他
+
+{% embed url="https://qiita.com/somainit/items/fc7e4b3c01e6450927b8" %}
+
+
+
 
 
 
