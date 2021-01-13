@@ -165,8 +165,82 @@ New password:
 Retype password: 
 passwd: password for root changed by root
 
+# Raspberry Pi4 Eth0ポートの設定変更
+uci set network.lan.proto=dhcp
+uci commit
+service network restart
+
 
 ```
+
+モデムにRaspberry Pie4をLANケーブルで接続する。
+
+接続後にRaspberry Pie4に割り当てられた動的IPアドレスを確認する。
+
+```text
+ifconfig
+
+br-lan    Link encap:Ethernet  HWaddr DC:A6:32:9C:15:A6  
+          inet addr:192.168.0.18  Bcast:192.168.0.255  Mask:255.255.255.0
+          inet6 addr: fd7d:eaaa:b058::1/60 Scope:Global
+          inet6 addr: fe80::dea6:32ff:fe9c:15a6/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:5063 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2743 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:3266822 (3.1 MiB)  TX bytes:249965 (244.1 KiB)
+
+eth0      Link encap:Ethernet  HWaddr DC:A6:32:9C:15:A6  
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:8497 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3570 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:4037410 (3.8 MiB)  TX bytes:319866 (312.3 KiB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:984 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:984 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:96453 (94.1 KiB)  TX bytes:96453 (94.1 KiB)
+
+
+```
+
+ホストPCから接続する
+
+```text
+ssh root@192.168.0.18
+
+```
+
+LuCIのインストールを実施する
+
+```text
+opkg update
+opkg install luci
+opkg install \
+    luci-i18n-base-ja \
+    luci-i18n-firewall-ja \
+    luci-i18n-opkg-ja
+    
+service uhttpd restart
+
+```
+
+![](.gitbook/assets/image%20%284%29.png)
+
+編集ボタンを押下する。
+
+![](.gitbook/assets/image%20%285%29.png)
+
+\[インターフェース設定\]-\[無線セキュリティ\]を変更する
+
+![](.gitbook/assets/image%20%286%29.png)
+
+
 
 
 
