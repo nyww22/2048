@@ -6,7 +6,7 @@
 
 ![](.gitbook/assets/image%20%2810%29.png)
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image%20%2815%29.png)
 
 ubuntu-20.04.1 imageファイルをダウンロードする。
 
@@ -14,9 +14,19 @@ ubuntu-20.04.1 imageファイルをダウンロードする。
 
 Ubuntu Server ImageをmicroSDカードに書き込むため、専用の書き込みツールをダウンロードする。専用の書き込みツール（Raspberry Pi Imager）となっている。
 
-![](.gitbook/assets/image%20%2813%29.png)
+![](.gitbook/assets/image%20%2814%29.png)
 
 imager\_1.5\_amd64.debファイルをGUIからインストールする。
+
+Raspberry Pi Imagerを起動する。
+
+![](.gitbook/assets/image%20%2816%29.png)
+
+![](.gitbook/assets/image%20%2811%29.png)
+
+Operating SystemとSD Cardを選択してWRITEボタンを押下する。
+
+
 
 
 
