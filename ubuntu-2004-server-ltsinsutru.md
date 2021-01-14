@@ -28,6 +28,14 @@ Operating SystemとSD Cardを選択してWRITEボタンを押下する。
 
 
 
+microSDカードをRaspberry Pi4に挿入し起動する。
+
+起動後ネットワーク環境の設定を実施する。
+
+{% embed url="https://makandat.wordpress.com/2020/06/20/raspberry-pi4-%E3%81%A7-ubuntu-20-04lts-server-%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%80%82/" %}
+
+
+
 
 
 
