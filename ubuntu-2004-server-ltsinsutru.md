@@ -34,7 +34,40 @@ microSDカードをRaspberry Pi4に挿入し起動する。
 
 {% embed url="https://makandat.wordpress.com/2020/06/20/raspberry-pi4-%E3%81%A7-ubuntu-20-04lts-server-%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%80%82/" %}
 
+```text
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt -y install network-manager
 
+# WiFiアダプタ情報の確認
+sudo lshw -class network -start
+/1      wlan0   network    Wireless interface
+/2      eth0    network    Ethernet interface
+
+
+sudo vim /etc/netplan/50-cloud-init.yaml
+
+-->以下を追加
+wifis:
+    wlan0: 
+      dhcp4: true
+      access-points: 
+        "OpenWrt"
+          password: "**********"
+version: 2
+renderer: NetworkManager
+
+
+
+sudo netplan apply
+
+sudo apt -y install net-tools
+
+ifconfig
+
+
+
+```
 
 
 
