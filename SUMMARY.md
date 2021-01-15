@@ -9,4 +9,6 @@
 * [モバイルWiFiルータセットアップ](mobairuwifirtasettoappu.md)
 * [Ubuntu 20.04 Server LTSインストール](ubuntu-2004-server-ltsinsutru.md)
 * [Ubuntu20.04にDockerをインストール](ubuntunidockerwoinsutru.md)
+* [Python3+Docker+Remote Developer](python3+docker+remote-developer.md)
+* [OpenWrt+FreeRadius](openwrt+freeradius.md)
 
