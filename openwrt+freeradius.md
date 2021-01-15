@@ -4,6 +4,8 @@
 
 {% embed url="https://qiita.com/somainit/items/fc7e4b3c01e6450927b8" %}
 
+{% embed url="https://labs.hottuna.tk/2017/12/openwrt%E3%81%A7wpa2-enterpriseeap-peap-mschapv2%E3%81%AE%E6%A7%8B%E7%AF%89/" %}
+
 
 
 Linux OSバージョン確認
