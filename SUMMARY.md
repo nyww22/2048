@@ -8,4 +8,5 @@
 * [Chrome起動時の問題](chromeno.md)
 * [モバイルWiFiルータセットアップ](mobairuwifirtasettoappu.md)
 * [Ubuntu 20.04 Server LTSインストール](ubuntu-2004-server-ltsinsutru.md)
+* [UbuntuにDockerをインストール](ubuntunidockerwoinsutru.md)
 

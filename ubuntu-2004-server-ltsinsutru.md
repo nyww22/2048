@@ -48,81 +48,28 @@ sudo lshw -class network -start
 sudo vim /etc/netplan/50-cloud-init.yaml
 
 -->以下を追加
-    wifis:
-        wlan0:
-            dhcp4: false
-            dhcp6: false
-            optional: true
-            addresses: [192.168.1.190/24]
-            gateway4: 192.168.1.1
-            nameservers:
-              addresses: [192.168.1.1]
-              search: []
-            access-points:
-              "OpenWrt":
-                 password: "************"
-    version: 2
-    renderer: NetworkManager
+wifis:
+    wlan0: 
+      dhcp4: true
+      access-points: 
+        "OpenWrt"
+          password: "**********"
+version: 2
+renderer: NetworkManager
+
+
 
 sudo netplan apply
 
 sudo apt -y install net-tools
+
 ifconfig
 
 
-```
-
-
-
-キーボードの設定変更を行う
-
-```text
-sudo dpkg-reconfigure keyboard-configuration
 
 ```
 
 
-
-ユーザの追加とデフォルトユーザ・Rootユーザのロック
-
-```text
-# ユーザUSERNAMEを作成
-sudo adduser USERNAME
-
-# ユーザUSERNAMEをsudoグループへ追加
-sudo adduser USERNAME sudo
-
-sudo passwd -d ubuntu
-sudo passwd -l ubuntu
-sudo passwd -l root
-```
-
-{% embed url="https://qiita.com/quailDegu/items/63114ba1e14416df8040" %}
-
-### 
-
-### ファイアーウォールの設定変更
-
-現状開いているポート番号の確認と必要なポートを変更する。
-
-```text
-# nmap（ポートスキャンソフト）をインストールする
-sudo apt install nmap
-
-# 開いているポート番号を確認する
-sudo nmap -sTU localhost
-
-Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-15 01:20 UTC
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.00047s latency).
-Not shown: 1999 closed ports
-PORT   STATE SERVICE
-22/tcp open  ssh
-
-Nmap done: 1 IP address (1 host up) scanned in 0.35 seconds
-
-
-```
 
 
 
