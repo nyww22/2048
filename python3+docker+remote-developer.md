@@ -36,6 +36,8 @@ sudoコマンドでの実行でなくても良い形でgroupへユーザを登�
 
 {% embed url="https://www.virment.com/how-to-fix-couldnt-connect-to-docker-daemon/" %}
 
+{% embed url="https://qiita.com/kanosawa/items/07e26edb19c86091fa48" %}
+
 
 
 
