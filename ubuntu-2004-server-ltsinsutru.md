@@ -97,9 +97,32 @@ sudo passwd -l ubuntu
 sudo passwd -l root
 ```
 
+{% embed url="https://qiita.com/quailDegu/items/63114ba1e14416df8040" %}
+
+### 
+
+### ファイアーウォールの設定変更
+
+現状開いているポート番号の確認と必要なポートを変更する。
+
+```text
+# nmap（ポートスキャンソフト）をインストールする
+sudo apt install nmap
+
+# 開いているポート番号を確認する
+sudo nmap -sTU localhost
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2021-01-15 01:20 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00047s latency).
+Not shown: 1999 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+Nmap done: 1 IP address (1 host up) scanned in 0.35 seconds
 
 
-[https://qiita.com/quailDegu/items/63114ba1e14416df8040](https://qiita.com/quailDegu/items/63114ba1e14416df8040)
+```
 
 
 
