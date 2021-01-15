@@ -92,6 +92,9 @@ sudo adduser USERNAME
 # ユーザUSERNAMEをsudoグループへ追加
 sudo adduser USERNAME sudo
 
+sudo passwd -d ubuntu
+sudo passwd -l ubuntu
+sudo passwd -l root
 ```
 
 
