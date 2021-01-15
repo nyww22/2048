@@ -48,28 +48,55 @@ sudo lshw -class network -start
 sudo vim /etc/netplan/50-cloud-init.yaml
 
 -->以下を追加
-wifis:
-    wlan0: 
-      dhcp4: true
-      access-points: 
-        "OpenWrt"
-          password: "**********"
-version: 2
-renderer: NetworkManager
-
-
+    wifis:
+        wlan0:
+            dhcp4: false
+            dhcp6: false
+            optional: true
+            addresses: [192.168.1.190/24]
+            gateway4: 192.168.1.1
+            nameservers:
+              addresses: [192.168.1.1]
+              search: []
+            access-points:
+              "OpenWrt":
+                 password: "************"
+    version: 2
+    renderer: NetworkManager
 
 sudo netplan apply
 
 sudo apt -y install net-tools
-
 ifconfig
-
 
 
 ```
 
 
+
+キーボードの設定変更を行う
+
+```text
+sudo dpkg-reconfigure keyboard-configuration
+
+```
+
+
+
+ユーザの追加とデフォルトユーザ・Rootユーザのロック
+
+```text
+# ユーザUSERNAMEを作成
+sudo adduser USERNAME
+
+# ユーザUSERNAMEをsudoグループへ追加
+sudo adduser USERNAME sudo
+
+```
+
+
+
+[https://qiita.com/quailDegu/items/63114ba1e14416df8040](https://qiita.com/quailDegu/items/63114ba1e14416df8040)
 
 
 
