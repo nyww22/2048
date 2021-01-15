@@ -59,3 +59,9 @@ TroubleShooting
 
 
 
+雑談
+
+{% embed url="https://tech.tanaka733.net/entry/visual-studio-code-extension-1" %}
+
+
+
