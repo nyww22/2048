@@ -40,7 +40,7 @@ sudo apt-get upgrade
 sudo apt -y install network-manager
 
 # WiFiアダプタ情報の確認
-sudo lshw -class network -start
+sudo lshw -class network -short
 /1      wlan0   network    Wireless interface
 /2      eth0    network    Ethernet interface
 
