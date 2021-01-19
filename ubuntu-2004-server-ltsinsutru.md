@@ -139,164 +139,11 @@ MulticastDNS setting: no
                       local               
                       private             
                       test                
-                      lan                 
-                      local               
-                      private             
-                      test                
-
-Link 3 (wlan0)
-      Current Scopes: DNS        
-DefaultRoute setting: yes        
-DefaultRoute setting: yes        
-       LLMNR setting: yes        
-       LLMNR setting: yes        
-
-Link 3 (wlan0)
-      Current Scopes: DNS        
-DefaultRoute setting: yes        
-                      private             
-                      test                
-
-Link 3 (wlan0)
-      Current Scopes: DNS        
-DefaultRoute setting: yes        
-DefaultRoute setting: yes        
-       LLMNR setting: yes        
-DefaultRoute setting: yes        
-       LLMNR setting: yes        
 
 Link 3 (wlan0)
       Current Scopes: DNS        
 DefaultRoute setting: yes        
        LLMNR setting: yes        
-Global
-       LLMNR setting: no                  
-MulticastDNS setting: no                  
-  DNSOverTLS setting: no                  
-      DNSSEC setting: no                  
-    DNSSEC supported: no                  
-          DNSSEC NTA: 10.in-addr.arpa     
-                      16.172.in-addr.arpa 
-                      168.192.in-addr.arpa
-                      17.172.in-addr.arpa 
-                      18.172.in-addr.arpa 
-                      19.172.in-addr.arpa 
-                      20.172.in-addr.arpa 
-                      21.172.in-addr.arpa 
-                      22.172.in-addr.arpa 
-                      23.172.in-addr.arpa 
-                      24.172.in-addr.arpa 
-                      25.172.in-addr.arpa 
-                      26.172.in-addr.arpa 
-                      27.172.in-addr.arpa 
-                      28.172.in-addr.arpa 
-                      29.172.in-addr.arpa 
-                      30.172.in-addr.arpa 
-                      31.172.in-addr.arpa 
-                      corp                
-                      d.f.ip6.arpa        
-                      home                
-                      internal            
-                      intranet            
-                      lan                 
-                      local               
-                      private             
-                      test                
-
-Link 3 (wlan0)
-      Current Scopes: DNS        
-DefaultRoute setting: yes        
-       LLMNR setting: yes        
-MulticastDNS setting: no         
-  DNSOverTLS setting: no         
-      DNSSEC setting: no         
-    DNSSEC supported: no         
-  Current DNS Server: 8.8.4.4    
-         DNS Servers: 192.168.0.1
-                      8.8.8.8    
-                      8.8.4.4    
-          DNS Domain: ~.         
-
-Link 2 (eth0)
-      Current Scopes: DNS                 
-DefaultRoute setting: yes                 
-       LLMNR setting: yes                 
-MulticastDNS setting: no                  
-  DNSOverTLS setting: no                  
-      DNSSEC setting: no                  
-    DNSSEC supported: no                  
-  Current DNS Server: 218.219.82.240      
-         DNS Servers: 218.219.82.240      
-                      220.208.109.240     
-          DNS Domain: ~.                  
-                      hachi1.kt.home.ne.jp
-lines 39-61/61 (END)
-MulticastDNS setting: no         
-  DNSOverTLS setting: no         
-      DNSSEC setting: no         
-    DNSSEC supported: no         
-  Current DNS Server: 8.8.4.4    
-         DNS Servers: 192.168.0.1
-                      8.8.8.8    
-                      8.8.4.4    
-          DNS Domain: ~.         
-
-Link 2 (eth0)
-      Current Scopes: DNS                 
-DefaultRoute setting: yes                 
-       LLMNR setting: yes                 
-MulticastDNS setting: no                  
-  DNSOverTLS setting: no                  
-      DNSSEC setting: no                  
-    DNSSEC supported: no                  
-  Current DNS Server: 218.219.82.240      
-         DNS Servers: 218.219.82.240      
-                      220.208.109.240     
-          DNS Domain: ~.                  
-lines 39-60/61 98%
-MulticastDNS setting: no         
-  DNSOverTLS setting: no         
-      DNSSEC setting: no         
-    DNSSEC supported: no         
-  Current DNS Server: 8.8.4.4    
-         DNS Servers: 192.168.0.1
-                      8.8.8.8    
-                      8.8.4.4    
-          DNS Domain: ~.         
-
-Link 2 (eth0)
-      Current Scopes: DNS                 
-DefaultRoute setting: yes                 
-       LLMNR setting: yes                 
-MulticastDNS setting: no                  
-  DNSOverTLS setting: no                  
-      DNSSEC setting: no                  
-    DNSSEC supported: no                  
-  Current DNS Server: 218.219.82.240      
-         DNS Servers: 218.219.82.240      
-                      220.208.109.240     
-lines 39-59/61 96%
-MulticastDNS setting: no         
-  DNSOverTLS setting: no         
-      DNSSEC setting: no         
-    DNSSEC supported: no         
-  Current DNS Server: 8.8.4.4    
-         DNS Servers: 192.168.0.1
-                      8.8.8.8    
-                      8.8.4.4    
-          DNS Domain: ~.         
-
-Link 2 (eth0)
-      Current Scopes: DNS                 
-DefaultRoute setting: yes                 
-       LLMNR setting: yes                 
-MulticastDNS setting: no                  
-  DNSOverTLS setting: no                  
-      DNSSEC setting: no                  
-    DNSSEC supported: no                  
-  Current DNS Server: 218.219.82.240      
-         DNS Servers: 218.219.82.240      
-lines 39-58/61 95%
 MulticastDNS setting: no         
   DNSOverTLS setting: no         
       DNSSEC setting: no         
@@ -321,7 +168,6 @@ MulticastDNS setting: no
           DNS Domain: ~.                  
                       hachi1.kt.home.ne.jp
 lines 43-61/61 (END)
-
 
 ```
 
