@@ -38,6 +38,7 @@ microSDカードをRaspberry Pi4に挿入し起動する。
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt -y install network-manager
+sudo apt -y install net-tools
 
 # WiFiアダプタ情報の確認
 sudo lshw -class network -short
@@ -67,12 +68,7 @@ network:
   version: 2
   renderer: NetworkManager
 
-
-
 sudo netplan apply
-
-sudo apt -y install net-tools
-
 ifconfig
 
 ```
@@ -187,7 +183,7 @@ lines 43-61/61 (END)
 #
 
 # Avahiパッケージのインストール
-$ sudo apt install avahi
+$ sudo apt-get install avahi-daemon
 
 # ホスト名の変更
 $ vim /etc/hostname
@@ -207,7 +203,6 @@ NEW_HOSTNAME
 #
 
 $ ping NEW_HOSTNAME.local
-
 
 ```
 
