@@ -45,24 +45,29 @@ sudo lshw -class network -short
 /2      eth0    network    Ethernet interface
 
 
-sudo vim /etc/netplan/50-cloud-init.yaml
+sudo vim /etc/netplan/99_config.yaml
 
--->以下を追加
-    wifis:
-        wlan0:
-            dhcp4: false
-            dhcp6: false
-            optional: true
-            addresses: [192.168.0.190/24]
-            gateway4: 192.168.0.1
-            nameservers:
-              addresses: [192.168.0.1]
-              search: []
-            access-points:
-              "OpenWrt":
-                 password: "************"
-    version: 2
-    renderer: NetworkManager
+ー＞以下の編集を行う
+network:
+  ethernets:
+     eth0:
+          dhcp4: true
+          optional: true
+  wifis:
+     wlan0:
+          dhcp4: true
+          #dhcp6: false
+          #addresses: [192.168.0.70/24]
+          #gateway4: 192.168.0.1
+          #nameservers:
+          #    addresses: [192.168.0.1, 8.8.8.8, 8.8.4.4]
+          access-points:
+              "BCW710J-83382-A":
+                      password: "3585744d7553c"
+  version: 2
+  renderer: NetworkManager
+
+
 
 sudo netplan apply
 
@@ -99,7 +104,112 @@ sudo passwd -l root
 
 {% embed url="https://qiita.com/quailDegu/items/63114ba1e14416df8040" %}
 
-### 
+
+
+### DNSサーバの設定確認
+
+```text
+$ sudo systemd-resolve --status
+
+Global
+       LLMNR setting: no                  
+MulticastDNS setting: no                  
+  DNSOverTLS setting: no                  
+      DNSSEC setting: no                  
+    DNSSEC supported: no                  
+          DNSSEC NTA: 10.in-addr.arpa     
+                      16.172.in-addr.arpa 
+                      168.192.in-addr.arpa
+                      17.172.in-addr.arpa 
+                      18.172.in-addr.arpa 
+                      19.172.in-addr.arpa 
+                      20.172.in-addr.arpa 
+                      21.172.in-addr.arpa 
+                      22.172.in-addr.arpa 
+                      23.172.in-addr.arpa 
+                      24.172.in-addr.arpa 
+                      25.172.in-addr.arpa 
+                      26.172.in-addr.arpa 
+                      27.172.in-addr.arpa 
+                      28.172.in-addr.arpa 
+                      29.172.in-addr.arpa 
+                      30.172.in-addr.arpa 
+                      31.172.in-addr.arpa 
+                      corp                
+                      d.f.ip6.arpa        
+                      home                
+                      internal            
+                      intranet            
+                      lan                 
+                      local               
+                      private             
+                      test                
+
+Link 3 (wlan0)
+      Current Scopes: DNS        
+DefaultRoute setting: yes        
+       LLMNR setting: yes        
+MulticastDNS setting: no         
+  DNSOverTLS setting: no         
+      DNSSEC setting: no         
+    DNSSEC supported: no         
+  Current DNS Server: 8.8.4.4    
+         DNS Servers: 192.168.0.1
+                      8.8.8.8    
+                      8.8.4.4    
+          DNS Domain: ~.         
+
+Link 2 (eth0)
+      Current Scopes: DNS                 
+DefaultRoute setting: yes                 
+       LLMNR setting: yes                 
+MulticastDNS setting: no                  
+  DNSOverTLS setting: no                  
+      DNSSEC setting: no                  
+    DNSSEC supported: no                  
+  Current DNS Server: 218.219.82.240      
+         DNS Servers: 218.219.82.240      
+                      220.208.109.240     
+          DNS Domain: ~.                  
+                      hachi1.kt.home.ne.jp
+lines 43-61/61 (END)
+
+```
+
+{% embed url="https://qiita.com/atomyah/items/1989138730f3385844dd" %}
+
+
+
+### mDNS（multicast DNS）の導入
+
+```text
+# 接続先サーバオペレーション
+#
+
+# Avahiパッケージのインストール
+$ sudo apt install avahi
+
+# ホスト名の変更
+$ vim /etc/hostname
+
+（変更前）
+ubuntu
+
+（変更後）
+NEW_HOSTNAME
+
+:wq!
+
+```
+
+```text
+#　ホスト端末先オペレーション
+#
+
+$ ping NEW_HOSTNAME.local
+
+
+```
 
 ### ファイアーウォールの設定変更
 

@@ -260,6 +260,35 @@ service uhttpd restart
 
 
 
+
+
+### PowerSaveモード変更
+
+APとしてフル活用するため、アクセスがない場合の省電力としてPowerSaveモードに移行しないように設定する。
+
+{% embed url="https://forum.archive.openwrt.org/viewtopic.php?id=31646" %}
+
+
+
+```text
+#  Power Saveモードを「off」にする。
+# iw dev wlan0 set power_save off
+
+# Power Saveモードの設定内容を確認する。
+# iw wlan0 get power_save
+Power save: on
+
+# OSを再起動する。
+# reboot
+
+＃再起動後に設定内容を確認する。
+# iw wlan0 get power_save
+Power save: on
+
+```
+
+
+
 ### kmod-usb-net-asix-ax88179パッケージインストール
 
 
