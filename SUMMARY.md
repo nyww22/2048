@@ -12,4 +12,5 @@
 * [Python3+Docker+VSCode\(Remote Developer\)](python3+docker+remote-developer.md)
 * [OpenWrt+FreeRadius](openwrt+freeradius.md)
 * [LibreELECインストール](libreelecinsutru.md)
+* [ローカルネットワーク内ホスト名解決](rkarunettowkuhosuto.md)
 
