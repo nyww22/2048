@@ -13,4 +13,5 @@
 * [OpenWrt+FreeRadius](openwrt+freeradius.md)
 * [LibreELECインストール](libreelecinsutru.md)
 * [ローカルネットワーク内ホスト名解決](rkarunettowkuhosuto.md)
+* [SDカード移行](sdkdo.md)
 
