@@ -30,6 +30,9 @@ $ sudo dd if=/dev/sda of=/home/takuto/sdcardimg.dd
 ### バックアップファイルからSDカードへリストア
 
 ```text
+$ sudo fdisk -l
+
+
 $ sudo dd if=/home/takuto/sdcardimg.dd of=/dev/sdc
 
 
