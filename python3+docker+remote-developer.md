@@ -65,6 +65,13 @@ $ sudo systemctl disable containerd.service
 
 {% embed url="https://docs.docker.com/compose/install/" %}
 
+```text
+# Raspberry Pi(arm64)のためpip経由での代替方法でインストールする
+
+$ sudo apt install python3-pip
+
+```
+
 
 
 
