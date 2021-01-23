@@ -23,6 +23,9 @@ Docker Install
    $(lsb_release -cs) \
    stable"
    
+   $ sudo apt-get update
+   
+   $ sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
 Visual Stadio Code + Remote Developer
