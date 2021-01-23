@@ -70,6 +70,8 @@ $ sudo systemctl disable containerd.service
 
 $ sudo apt install python3-pip
 
+$ sudo pip3 install -U docker-compose
+
 ```
 
 
