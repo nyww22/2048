@@ -75,6 +75,21 @@ ifconfig
 
 
 
+SSHログイン時のshellを変更する。デフォルトだとdashになっているようであるため。
+
+```text
+$ chsh
+
+Changing the login shell for takuto-iima
+Enter the new value, or press ENTER for the default
+        Login Shell [/bin/dash]: /bin/bash
+
+```
+
+{% embed url="https://forums.ubuntulinux.jp/viewtopic.php?id=5621" %}
+
+
+
 キーボードの設定変更を行う
 
 ```text
