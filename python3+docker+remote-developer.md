@@ -4,6 +4,10 @@ Docker Install
 
 {% embed url="https://docs.docker.com/engine/install/ubuntu/" %}
 
+{% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
+
+
+
 {% embed url="https://qiita.com/reflet/items/4b3f91661a54ec70a7dc" %}
 
 {% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
@@ -44,9 +48,26 @@ $ newgrp docker
 $ docker run hello-world
 
 
+# Ubuntu起動時にDockerサービスが起動するように設定
 
+$ sudo systemctl enable docker.service
+$ sudo systemctl enable containerd.service
+
+# 上記設定を無効にする場合は以下のコマンドを実行
+$ sudo systemctl disable docker.service
+$ sudo systemctl disable containerd.service
 
 ```
+
+### 
+
+### Docker Composeをインストール
+
+{% embed url="https://docs.docker.com/compose/install/" %}
+
+
+
+
 
 Visual Stadio Code + Remote Developer
 
