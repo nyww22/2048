@@ -9,7 +9,9 @@ Docker Install
 {% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
 
 ```text
-   $ sudo apt-get remove docker docker-engine docker.io containerd runc
+# Install Docker Engine
+   
+    $ sudo apt-get remove docker docker-engine docker.io containerd runc
    
    $ sudo apt-get update
    
