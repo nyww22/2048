@@ -27,12 +27,21 @@ Docker Install
    
    $ sudo apt-get update
    
-   $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-   
-   
+   $ sudo apt-get install docker-ce docker-ce-cli containerd.io   
+
+   $ sudo docker run hello-world
+
+            
 # useradd Docker Group
 
+# dockerグループへログインユーザを登録
 $ sudo usermod -aG docker $USER
+
+# グループの即時反映
+$ newgrp docker
+
+# sudoなしで実行できることを確認する
+$ docker run hello-world
 
 
 
