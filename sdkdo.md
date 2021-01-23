@@ -20,7 +20,7 @@ I/O サイズ (最小 / 推奨): 512 バイト / 512 バイト
 /dev/sda2         526336 62333918 61807583  29.5G 83 Linux
 
 
-$ sudo dd if=/dev/sda of=/home/takuto/sdcardimg.dd
+$ sudo dd if=/dev/sda of=/home/takuto/sdcardimg.dd bs=32M
 
 
 ```
@@ -33,7 +33,7 @@ $ sudo dd if=/dev/sda of=/home/takuto/sdcardimg.dd
 $ sudo fdisk -l
 
 
-$ sudo dd if=/home/takuto/sdcardimg.dd of=/dev/sdc
+$ sudo dd if=/home/takuto/sdcardimg.dd of=/dev/sdc bs=32M
 
 
 ```
