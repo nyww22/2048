@@ -11,7 +11,7 @@ Docker Install
 ```text
 # Install Docker Engine
    
-    $ sudo apt-get remove docker docker-engine docker.io containerd runc
+   $ sudo apt-get remove docker docker-engine docker.io containerd runc
    
    $ sudo apt-get update
    
@@ -28,6 +28,15 @@ Docker Install
    $ sudo apt-get update
    
    $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+   
+   
+# useradd Docker Group
+
+$ sudo usermod -aG docker $USER
+
+
+
+
 ```
 
 Visual Stadio Code + Remote Developer
