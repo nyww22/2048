@@ -72,6 +72,12 @@ $ sudo apt install python3-pip
 
 $ sudo pip3 install -U docker-compose
 
+$ which docker-compose
+/usr/local/bin/docker-compose
+
+$ docker-compose -v
+docker-compose version 1.28.0, build unknown
+
 ```
 
 
