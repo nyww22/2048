@@ -88,7 +88,9 @@ docker-compose version 1.28.0, build unknown
 
 {% embed url="https://dev.classmethod.jp/articles/docker-multi-architecture-image-build/" %}
 
-[https://qiita.com/NT1123/items/06794fd0435df5eefce4](https://qiita.com/NT1123/items/06794fd0435df5eefce4)
+{% embed url="https://qiita.com/NT1123/items/06794fd0435df5eefce4" %}
+
+
 
 
 
