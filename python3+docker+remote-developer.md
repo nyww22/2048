@@ -8,6 +8,8 @@ Docker Install
 
 
 
+{% embed url="https://www.python.jp/install/ubuntu/pip.html" %}
+
 {% embed url="https://qiita.com/reflet/items/4b3f91661a54ec70a7dc" %}
 
 {% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
