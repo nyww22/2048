@@ -21,3 +21,13 @@ $ cd gitbook-template-master
 
 ```
 
+
+
+{% embed url="https://github.com/GitbookIO/editor-legacy" %}
+
+
+
+{% embed url="https://github.com/GitbookIO/editor-legacy/releases" %}
+
+
+
