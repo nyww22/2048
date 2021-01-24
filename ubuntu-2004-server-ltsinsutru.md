@@ -258,5 +258,10 @@ Nmap done: 1 IP address (1 host up) scanned in 0.35 seconds
 
 ```
 
+### 日本語ディレクトリを英語ディレクトリへ変更
 
+```text
+$ LANG=C xdg-user-dirs-gtk-update
+
+```
 
