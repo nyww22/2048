@@ -38,8 +38,6 @@ Docker Install
    $ sudo docker run hello-world
 
             
-# useradd Docker Group
-
 # dockerグループへログインユーザを登録
 $ sudo usermod -aG docker $USER
 

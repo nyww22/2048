@@ -97,7 +97,7 @@ Enter the new value, or press ENTER for the default
 #### 解決方法②
 
 ```text
-$ sudo usermod -s /bin/bash $USER
+$ sudo usermod -s /bin/bash username
 ```
 
 {% embed url="https://sites.google.com/site/yokotatsuya/memo/ssh%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%99%E3%82%8B%E3%81%A8bindash%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%95%E3%82%8C%E3%81%A6%E3%81%97%E3%81%BE%E3%81%86%E5%95%8F%E9%A1%8C" %}
