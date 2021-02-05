@@ -1,5 +1,15 @@
 # AWS Lambda
 
+SDKランタイムはアプリ内にパッケージングする
+
+![](.gitbook/assets/image%20%2898%29.png)
+
+
+
+
+
+
+
 
 
 {% hint style="info" %}
