@@ -47,5 +47,7 @@ AWS LambdaとRDBMSの相性が悪いのは何故か？
 
 {% embed url="https://qiita.com/morimop/items/cb5af1131571ba6361e2" %}
 
+{% embed url="https://dev.classmethod.jp/articles/lambda-idempotency/" %}
 
+\*\*\*\*
 
