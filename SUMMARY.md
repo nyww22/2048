@@ -45,4 +45,5 @@
 * [AWS サポート](aws-sapto.md)
 * [DynamoDB](dynamodb.md)
 * [DynamoDB](dynamodb-1.md)
+* [Amazon EKS](amazon-eks.md)
 
