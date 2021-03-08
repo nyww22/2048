@@ -6,7 +6,8 @@
 
 ・Amazon EKS Workshop
 
-・AWS Black Belt Online Seminer
+・AWS Black Belt Online Seminer  
+　サービスカットシリーズ
 
 
 
