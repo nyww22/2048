@@ -84,5 +84,9 @@
 
 {% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html" %}
 
+### PKCE
+
+{% embed url="https://dev.classmethod.jp/articles/oauth-2-0-pkce-by-auth0/" %}
+
 
 
