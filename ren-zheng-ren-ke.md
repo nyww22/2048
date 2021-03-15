@@ -78,5 +78,9 @@
 
 {% embed url="https://www.nri-secure.co.jp/blog/openid-connect-ciba-implementation" %}
 
+### 認証・認可サービス実装
+
+{% embed url="https://qiita.com/is\_ryo/items/a437225115b27e05c8ee" %}
+
 
 
