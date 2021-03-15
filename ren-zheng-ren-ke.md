@@ -82,5 +82,7 @@
 
 {% embed url="https://qiita.com/is\_ryo/items/a437225115b27e05c8ee" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html" %}
+
 
 
