@@ -47,4 +47,5 @@
 * [DynamoDB](dynamodb-1.md)
 * [Amazon EKS](amazon-eks.md)
 * [マイクロサービスアーキテクチャ](maikurosbisukitekucha.md)
+* [AWS EC2](aws-ec2.md)
 
