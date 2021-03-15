@@ -74,5 +74,9 @@
 
 {% embed url="https://qiita.com/TakahikoKawasaki/items/63ed4a9d8d6e5109e401" %}
 
+### CIBA
+
+{% embed url="https://www.nri-secure.co.jp/blog/openid-connect-ciba-implementation" %}
+
 
 
