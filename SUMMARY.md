@@ -15,5 +15,5 @@
 * [ローカルネットワーク内ホスト名解決](rkarunettowkuhosuto.md)
 * [SDカード移行](sdkdo.md)
 * [Windows10 バックアップ](windows10-bakkuappu.md)
-* [VSCode + Spring Boot + Jersey + Docker + MySQL](vscode-+-spring-boot-+-jersey-+-docker-+-mysql.md)
+* [VSCode + Spring Boot + Jersey + Spring JPA + Docker + MySQL](vscode-+-spring-boot-+-jersey-+-docker-+-mysql.md)
 

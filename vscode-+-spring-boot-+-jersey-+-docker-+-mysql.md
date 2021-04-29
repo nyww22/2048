@@ -1,4 +1,4 @@
-# VSCode + Spring Boot + Jersey + Docker + MySQL
+# VSCode + Spring Boot + Jersey + Spring JPA + Docker + MySQL
 
 ### VSCode
 
@@ -30,6 +30,10 @@ Spring Open Session VIewを設定すべきか？
 
 
 
+### プロジェクト構造（エレガントな例）
+
+{% embed url="https://github.com/adeorha/User-Auth" %}
+
 
 
 
@@ -39,6 +43,18 @@ Spring Open Session VIewを設定すべきか？
 ### Jersey : JAX-RS実装
 
 {% embed url="https://backpaper0.github.io/ghosts/jaxrs-getting-started-and-practice.html\#23" %}
+
+
+
+### Spring JPA
+
+{% embed url="https://qiita.com/os1ma/items/46947ef1fb37c8d11878" %}
+
+{% embed url="https://qiita.com/mikesorae/items/ff8192fb9cf106262dbf" %}
+
+
+
+
 
 
 
