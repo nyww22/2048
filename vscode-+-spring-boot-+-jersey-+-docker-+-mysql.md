@@ -36,6 +36,10 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://github.com/adeorha/User-Auth" %}
 
+[https://www.appsdeveloper](https://www.appsdeveloperblog.com/configure-spring-data-jpa-in-jersey-2-jax-rs-web-app/)
+
+{% embed url="https://blog.com/configure-spring-data-jpa-in-jersey-2-jax-rs-web-app/" %}
+
 
 
 
@@ -53,6 +57,10 @@ Spring Open Session VIewを設定すべきか？
 {% embed url="https://qiita.com/os1ma/items/46947ef1fb37c8d11878" %}
 
 {% embed url="https://qiita.com/mikesorae/items/ff8192fb9cf106262dbf" %}
+
+{% embed url="https://qiita.com/rubytomato@github/items/6781e91bcf7ab8a68c40" %}
+
+{% embed url="https://qiita.com/niwasawa/items/a7f707b58a00ad7832dd" %}
 
 
 
