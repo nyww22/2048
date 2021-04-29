@@ -2,6 +2,18 @@
 
 ### VSCode
 
+{% embed url="https://qiita.com/ymasaoka/items/aa03323bbac7e7c5f1be" %}
+
+{% embed url="https://qiita.com/kyorohiro/items/786c47784124163ab2f8" %}
+
+{% embed url="https://github.com/microsoft/vscode-remote-try-java" %}
+
+{% embed url="https://qiita.com/Yuki\_Oshima/items/d3b52c553387685460b0" %}
+
+{% embed url="https://ameblo.jp/kazusa-g/entry-12535018096.html" %}
+
+{% embed url="https://ameblo.jp/kazusa-g/entry-12536838291.html" %}
+
 
 
 
@@ -36,9 +48,9 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://github.com/adeorha/User-Auth" %}
 
-[https://www.appsdeveloper](https://www.appsdeveloperblog.com/configure-spring-data-jpa-in-jersey-2-jax-rs-web-app/)
-
 {% embed url="https://blog.com/configure-spring-data-jpa-in-jersey-2-jax-rs-web-app/" %}
+
+{% embed url="https://techacademy.jp/magazine/19443" %}
 
 
 
@@ -77,6 +89,8 @@ Spring Open Session VIewを設定すべきか？
 {% embed url="https://qiita.com/sumyapp/items/ebb7e22f6439458337e6" %}
 
 {% embed url="https://qiita.com/dz\_/items/ae7a0e5aad0ec9dd8ba7" %}
+
+{% embed url="https://qiita.com/juhn/items/274e44ee80354a39d872" %}
 
 
 
