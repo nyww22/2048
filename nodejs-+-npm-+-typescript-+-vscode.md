@@ -10,6 +10,16 @@
 
 
 
+### TypeScript
+
+{% embed url="https://qiita.com/ryokkkke/items/390647a7c26933940470" %}
+
+{% embed url="https://ics.media/entry/4682/" %}
+
+
+
+
+
 ### NPM
 
 {% embed url="https://techacademy.jp/magazine/16393" %}
