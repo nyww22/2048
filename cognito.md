@@ -6,11 +6,19 @@
 
 {% embed url="https://docs.aws.amazon.com/ja\_jp/IAM/latest/UserGuide/id\_roles\_providers\_oidc\_cognito.html" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html" %}
+
+
+
 {% embed url="https://dev.classmethod.jp/articles/built-in-authentication-in-alb-with-okta/" %}
 
 {% embed url="https://qiita.com/is\_ryo/items/a437225115b27e05c8ee" %}
 
 {% embed url="https://dev.classmethod.jp/articles/add-keycloak-to-cognito-with-oidc/" %}
+
+{% embed url="https://dev.classmethod.jp/articles/cognito-alb-oidc-okta/" %}
+
+{% embed url="https://dev.classmethod.jp/articles/cognito-alb-socialsignin/" %}
 
 
 
