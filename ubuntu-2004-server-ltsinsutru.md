@@ -1,16 +1,14 @@
 # Ubuntu 20.04 Server LTSインストール
 
-### RaspberryPi4にUbuntu20.0.4 Server LTSをインストール
+## RaspberryPi4にUbuntu20.0.4 Server LTSをインストール
 
-{% embed url="https://ubuntu.com/download/raspberry-pi" %}
+{% embed url="https://ubuntu.com/download/raspberry-pi" caption="" %}
 
 ![](.gitbook/assets/image%20%2810%29.png)
 
 ![](.gitbook/assets/image%20%2815%29.png)
 
 ubuntu-20.04.1 imageファイルをダウンロードする。
-
-
 
 Ubuntu Server ImageをmicroSDカードに書き込むため、専用の書き込みツールをダウンロードする。専用の書き込みツール（Raspberry Pi Imager）となっている。
 
@@ -26,13 +24,11 @@ Raspberry Pi Imagerを起動する。
 
 Operating SystemとSD Cardを選択してWRITEボタンを押下する。
 
-
-
 microSDカードをRaspberry Pi4に挿入し起動する。
 
 起動後ネットワーク環境の設定を実施する。
 
-{% embed url="https://makandat.wordpress.com/2020/06/20/raspberry-pi4-%E3%81%A7-ubuntu-20-04lts-server-%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%80%82/" %}
+{% embed url="https://makandat.wordpress.com/2020/06/20/raspberry-pi4-%E3%81%A7-ubuntu-20-04lts-server-%E3%82%92%E5%8B%95%E3%81%8B%E3%81%99%E3%80%82/" caption="" %}
 
 ```text
 sudo apt-get update
@@ -70,10 +66,7 @@ network:
 
 sudo netplan apply
 ifconfig
-
 ```
-
-
 
 SSHログイン時のshellを変更する。デフォルトだとdashになっているようであるため。  
 dashだと矢印キーやファンクションキー、DELキーが正常に入力できない。
@@ -81,7 +74,7 @@ dashだと矢印キーやファンクションキー、DELキーが正常に入�
 Ubuntuの/bin/shは、dash（Debian ash）へのシンボリックリンクとなっている。  
 以下２パターンの解決方法がある。
 
-#### 解決方法①
+### 解決方法①
 
 ```text
 $ chsh
@@ -89,29 +82,23 @@ $ chsh
 Changing the login shell for takuto-iima
 Enter the new value, or press ENTER for the default
         Login Shell [/bin/sh]: /bin/bash
-
 ```
 
-{% embed url="https://forums.ubuntulinux.jp/viewtopic.php?id=5621" %}
+{% embed url="https://forums.ubuntulinux.jp/viewtopic.php?id=5621" caption="" %}
 
-#### 解決方法②
+### 解決方法②
 
 ```text
 $ sudo usermod -s /bin/bash username
 ```
 
-{% embed url="https://sites.google.com/site/yokotatsuya/memo/ssh%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%99%E3%82%8B%E3%81%A8bindash%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%95%E3%82%8C%E3%81%A6%E3%81%97%E3%81%BE%E3%81%86%E5%95%8F%E9%A1%8C" %}
-
-
+{% embed url="https://sites.google.com/site/yokotatsuya/memo/ssh%E3%81%A7%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%99%E3%82%8B%E3%81%A8bindash%E3%81%A7%E8%B5%B7%E5%8B%95%E3%81%95%E3%82%8C%E3%81%A6%E3%81%97%E3%81%BE%E3%81%86%E5%95%8F%E9%A1%8C" caption="" %}
 
 キーボードの設定変更を行う
 
 ```text
 sudo dpkg-reconfigure keyboard-configuration
-
 ```
-
-
 
 ユーザの追加とデフォルトユーザ・Rootユーザのロック
 
@@ -127,11 +114,9 @@ sudo passwd -l ubuntu
 sudo passwd -l root
 ```
 
-{% embed url="https://qiita.com/quailDegu/items/63114ba1e14416df8040" %}
+{% embed url="https://qiita.com/quailDegu/items/63114ba1e14416df8040" caption="" %}
 
-
-
-### DNSサーバの設定確認
+## DNSサーバの設定確認
 
 ```text
 $ sudo systemd-resolve --status
@@ -198,14 +183,11 @@ MulticastDNS setting: no
           DNS Domain: ~.                  
                       hachi1.kt.home.ne.jp
 lines 43-61/61 (END)
-
 ```
 
-{% embed url="https://qiita.com/atomyah/items/1989138730f3385844dd" %}
+{% embed url="https://qiita.com/atomyah/items/1989138730f3385844dd" caption="" %}
 
-
-
-### mDNS（multicast DNS）の導入
+## mDNS（multicast DNS）の導入
 
 ```text
 # 接続先サーバオペレーション
@@ -224,7 +206,6 @@ ubuntu
 NEW_HOSTNAME
 
 :wq!
-
 ```
 
 ```text
@@ -232,10 +213,9 @@ NEW_HOSTNAME
 #
 
 $ ping NEW_HOSTNAME.local
-
 ```
 
-### ファイアーウォールの設定変更
+## ファイアーウォールの設定変更
 
 現状開いているポート番号の確認と必要なポートを変更する。
 
@@ -254,14 +234,5 @@ PORT   STATE SERVICE
 22/tcp open  ssh
 
 Nmap done: 1 IP address (1 host up) scanned in 0.35 seconds
-
-
-```
-
-### 日本語ディレクトリを英語ディレクトリへ変更
-
-```text
-$ LANG=C xdg-user-dirs-gtk-update
-
 ```
 
