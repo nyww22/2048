@@ -14,7 +14,11 @@
 
 {% embed url="https://ameblo.jp/kazusa-g/entry-12536838291.html" %}
 
-
+> \*\*\*\*
+>
+> **VSCodeによるimport文の解消方法**
+>
+> **SHIFT + ALT + O**を押します
 
 
 
