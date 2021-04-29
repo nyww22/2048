@@ -62,6 +62,8 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://qiita.com/niwasawa/items/a7f707b58a00ad7832dd" %}
 
+{% embed url="https://builder.japan.zdnet.com/sp\_oracle/35067018/2/" %}
+
 
 
 
@@ -73,6 +75,8 @@ Spring Open Session VIewを設定すべきか？
 ### Docker
 
 {% embed url="https://qiita.com/sumyapp/items/ebb7e22f6439458337e6" %}
+
+{% embed url="https://qiita.com/dz\_/items/ae7a0e5aad0ec9dd8ba7" %}
 
 
 
