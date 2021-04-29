@@ -16,6 +16,8 @@ Spring Open Session VIewを設定すべきか？
 
 [https://tosi-tech.net/2018/08/open-session-in-view-pattern/](https://tosi-tech.net/2018/08/open-session-in-view-pattern/)
 
+{% embed url="https://spring.pleiades.io/spring-framework/docs/current/javadoc-api/org/springframework/beans/BeanUtils.html\#copyProperties-java.lang.Object-java.lang.Object-" %}
+
 
 
 
