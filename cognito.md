@@ -28,6 +28,8 @@
 
 {% embed url="https://dev.classmethod.jp/articles/cognito-alb-socialsignin/" %}
 
+{% embed url="https://dev.classmethod.jp/articles/cognito-examples-for-external-idp/" %}
+
 
 
 {% embed url="https://qiita.com/poruruba/items/189945dc64edfe1f2464" %}
