@@ -26,10 +26,6 @@
 >
 > **SHIFT + ALT + O**を押します
 
-{% embed url="https://qiita.com/Midoliy/items/0b254d91aa93763db11a" %}
-
-{% embed url="https://step-learn.com/article/vscode/008-reload.html" %}
-
 
 
 
@@ -101,10 +97,6 @@ Spring Open Session VIewを設定すべきか？
 
 
 ### Docker
-
-{% embed url="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-ja" %}
-
-
 
 {% embed url="https://qiita.com/sumyapp/items/ebb7e22f6439458337e6" %}
 
