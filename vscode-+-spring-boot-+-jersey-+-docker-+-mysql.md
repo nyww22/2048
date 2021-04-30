@@ -124,6 +124,8 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://note.nkmk.me/git-config-setting/" %}
 
+{% embed url="https://qiita.com/narikei/items/db064f06e793372e7372" %}
+
 
 
 
