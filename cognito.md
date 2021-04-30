@@ -4,6 +4,8 @@
 
 {% embed url="https://aws.amazon.com/jp/premiumsupport/knowledge-center/cognito-user-pools-identity-pools/" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/authentication-flow.html" %}
+
 
 
 
