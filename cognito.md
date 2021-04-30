@@ -8,6 +8,10 @@
 
 {% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html" %}
 
+{% embed url="https://qiita.com/UpAllNight/items/ec522da70a6fe86a1d16" %}
+
+
+
 
 
 {% embed url="https://dev.classmethod.jp/articles/built-in-authentication-in-alb-with-okta/" %}
