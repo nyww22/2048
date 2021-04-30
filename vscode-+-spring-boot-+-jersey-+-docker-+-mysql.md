@@ -120,7 +120,9 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://docs.docker.jp/compose/startup-order.html?highlight=depends" %}
 
-
+```text
+sudo aa-remove-unknown
+```
 
 
 
