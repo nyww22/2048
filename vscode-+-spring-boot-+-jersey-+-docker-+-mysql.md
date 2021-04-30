@@ -98,6 +98,10 @@ Spring Open Session VIewを設定すべきか？
 
 ### Docker
 
+{% embed url="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-ja" %}
+
+
+
 {% embed url="https://qiita.com/sumyapp/items/ebb7e22f6439458337e6" %}
 
 {% embed url="https://qiita.com/dz\_/items/ae7a0e5aad0ec9dd8ba7" %}
