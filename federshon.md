@@ -6,5 +6,7 @@
 
 {% embed url="https://aws.amazon.com/jp/premiumsupport/knowledge-center/cognito-google-social-identity-provider/?nc1=h\_ls" %}
 
+{% embed url="https://aws.amazon.com/jp/premiumsupport/knowledge-center/cognito-hosted-web-ui/" %}
+
 
 
