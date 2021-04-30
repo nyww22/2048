@@ -66,6 +66,8 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://backpaper0.github.io/ghosts/jaxrs-getting-started-and-practice.html\#23" %}
 
+{% embed url="https://www.baeldung.com/jax-rs-response" %}
+
 
 
 ### Spring JPA
