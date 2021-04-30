@@ -98,6 +98,8 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://qiita.com/juhn/items/274e44ee80354a39d872" %}
 
+{% embed url="https://docs.docker.jp/compose/startup-order.html?highlight=depends" %}
+
 
 
 
