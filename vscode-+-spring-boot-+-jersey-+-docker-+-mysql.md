@@ -28,6 +28,8 @@
 
 {% embed url="https://qiita.com/Midoliy/items/0b254d91aa93763db11a" %}
 
+{% embed url="https://step-learn.com/article/vscode/008-reload.html" %}
+
 
 
 
