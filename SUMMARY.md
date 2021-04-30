@@ -19,4 +19,5 @@
 * [Nodejs + NPM + TypeScript + VSCode](nodejs-+-npm-+-typescript-+-vscode.md)
 * [ThingsBoard](thingsboard.md)
 * [JPA](jpa.md)
+* [WordPressでサイトを作る際の注意点](wordpressdesaitoworuno.md)
 
