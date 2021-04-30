@@ -1,5 +1,11 @@
 # VSCode + Spring Boot + Jersey + Spring JPA + Docker + MySQL
 
+本活動サンプルは以下の場所で管理している。
+
+{% embed url="https://github.com/nyww22/demo" %}
+
+
+
 ### VSCode
 
 {% embed url="https://qiita.com/ymasaoka/items/aa03323bbac7e7c5f1be" %}
@@ -66,6 +72,8 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://backpaper0.github.io/ghosts/jaxrs-getting-started-and-practice.html\#23" %}
 
+{% embed url="https://www.baeldung.com/jax-rs-response" %}
+
 
 
 ### Spring JPA
@@ -96,6 +104,8 @@ Spring Open Session VIewを設定すべきか？
 
 {% embed url="https://qiita.com/juhn/items/274e44ee80354a39d872" %}
 
+{% embed url="https://docs.docker.jp/compose/startup-order.html?highlight=depends" %}
+
 
 
 
@@ -107,6 +117,16 @@ Spring Open Session VIewを設定すべきか？
 {% embed url="https://oishi-kenko.hatenablog.com/entry/2017/10/27/161618" %}
 
 [https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b](https://qiita.com/muroya2355/items/d4eecbe722a8ddb2568b)
+
+
+
+### GitHub
+
+{% embed url="https://note.nkmk.me/git-config-setting/" %}
+
+{% embed url="https://qiita.com/narikei/items/db064f06e793372e7372" %}
+
+{% embed url="https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository" %}
 
 
 
