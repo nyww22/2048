@@ -8,5 +8,3 @@
 
 {% embed url="https://aws.amazon.com/jp/premiumsupport/knowledge-center/cognito-hosted-web-ui/" %}
 
-
-
