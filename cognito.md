@@ -10,6 +10,10 @@
 
 {% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/cognito-user-pools-oidc-idp.html" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/authentication-flow.html" %}
+
+{% embed url="https://docs.aws.amazon.com/ja\_jp/cognito/latest/developerguide/developer-authenticated-identities.html" %}
+
 
 
 {% embed url="https://qiita.com/UpAllNight/items/ec522da70a6fe86a1d16" %}
