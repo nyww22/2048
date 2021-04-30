@@ -1,5 +1,11 @@
 # VSCode + Spring Boot + Jersey + Spring JPA + Docker + MySQL
 
+本活動サンプルは以下の場所で管理している。
+
+{% embed url="https://github.com/nyww22/demo" %}
+
+
+
 ### VSCode
 
 {% embed url="https://qiita.com/ymasaoka/items/aa03323bbac7e7c5f1be" %}
