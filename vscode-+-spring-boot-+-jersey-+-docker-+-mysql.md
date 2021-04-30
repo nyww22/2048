@@ -26,6 +26,8 @@
 >
 > **SHIFT + ALT + O**を押します
 
+{% embed url="https://qiita.com/Midoliy/items/0b254d91aa93763db11a" %}
+
 
 
 
