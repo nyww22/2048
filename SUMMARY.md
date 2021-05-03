@@ -20,4 +20,5 @@
 * [ThingsBoard](thingsboard.md)
 * [JPA](jpa.md)
 * [WordPressでサイトを作る際の注意点](wordpressdesaitoworuno.md)
+* [Effective Java](effective-java.md)
 
