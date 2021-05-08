@@ -1,4 +1,4 @@
-# Nodejs + NPM + TypeScript + VSCode
+# Nodejs + NPM + TypeScript + VSCode + Nodemon
 
 ### VSCode
 
@@ -7,6 +7,16 @@
 {% embed url="https://qiita.com/GRGSIBERIA/items/b8cd4a2b3635d1bb0391" %}
 
 {% embed url="https://qiita.com/kurogelee/items/cf7954f6c23294600ef2" %}
+
+
+
+### Nodemon
+
+{% embed url="https://www.digitalocean.com/community/tutorials/workflow-nodemon-ja" %}
+
+
+
+
 
 
 

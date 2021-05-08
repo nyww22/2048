@@ -16,7 +16,7 @@
 * [SDカード移行](sdkdo.md)
 * [Windows10 バックアップ](windows10-bakkuappu.md)
 * [VSCode + Spring Boot + Jersey + Spring JPA + Docker + MySQL](vscode-+-spring-boot-+-jersey-+-docker-+-mysql.md)
-* [Nodejs + NPM + TypeScript + VSCode](nodejs-+-npm-+-typescript-+-vscode.md)
+* [Nodejs + NPM + TypeScript + VSCode + Nodemon](nodejs-+-npm-+-typescript-+-vscode.md)
 * [ThingsBoard](thingsboard.md)
 * [JPA](jpa.md)
 * [WordPressでサイトを作る際の注意点](wordpressdesaitoworuno.md)
