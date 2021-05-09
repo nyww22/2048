@@ -8,6 +8,8 @@
 
 {% embed url="https://qiita.com/kurogelee/items/cf7954f6c23294600ef2" %}
 
+{% embed url="https://code.visualstudio.com/docs/nodejs/nodejs-debugging" %}
+
 
 
 ### Nodemon
