@@ -28,3 +28,9 @@ buildフォルダは削除してmakeを実行しないといけない。
 
 
 
+### JupyterNoteBookにカーネル環境を追加（Conda環境の追加）
+
+{% embed url="https://qiita.com/smiler5617/items/e0d9b3034d79457cc253" %}
+
+
+
