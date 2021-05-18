@@ -20,3 +20,11 @@ buildフォルダは削除してmakeを実行しないといけない。
 
 ```
 
+
+
+### PiCameraで画像認識
+
+{% embed url="https://qiita.com/KMiura95/items/41a24d7639cffc629227" %}
+
+
+
