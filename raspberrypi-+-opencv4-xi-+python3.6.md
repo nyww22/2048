@@ -32,6 +32,10 @@ buildフォルダは削除してmakeを実行しないといけない。
 
 {% embed url="https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade\_frontalface\_default.xml" %}
 
+{% embed url="https://qiita.com/mt08/items/e8e8e728cf106ac83218" %}
+
+{% embed url="https://qiita.com/hsgucci/items/5d4e4de933a14820795b" %}
+
 
 
 
