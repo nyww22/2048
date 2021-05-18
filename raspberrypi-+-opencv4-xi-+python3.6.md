@@ -30,6 +30,8 @@ buildフォルダは削除してmakeを実行しないといけない。
 
 {% embed url="https://qiita.com/FukuharaYohei/items/ec6dce7cc5ea21a51a82" %}
 
+{% embed url="https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade\_frontalface\_default.xml" %}
+
 
 
 
