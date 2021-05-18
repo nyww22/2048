@@ -18,4 +18,5 @@
 * [GitBook環境構築](gitbook-huan-jing-gou-zhu.md)
 * [Kubernetes](kubernetes-kind.md)
 * [ChromeBook OS](chromebook-os.md)
+* [Raspberry Pi端末設定](raspberry-pi-duan-mo-she-ding.md)
 
