@@ -1,13 +1,8 @@
 # Java
 
-{% embed url="https://download.eclipse.org/oomph/jre/?vm=1\_1\_8\_0\_64\_0&pn=Eclipse%20Installer&pu=http://wiki.eclipse.org/Eclipse\_Installer&pi=http://download.eclipse.org/oomph/jre/128x128.png" %}
+### Amazon Coretto 11
 
-#### ERMasterプラグイン
-
-> プラグインダウンロード先：設定URL  
-> [https://sourceforge.net/projects/ermaster/files/ermaster/](https://sourceforge.net/projects/ermaster/files/ermaster/)
->
-> [http://ermaster.sourceforge.net/update-site](http://ermaster.sourceforge.net/update-site)
+{% embed url="https://docs.aws.amazon.com/ja\_jp/corretto/latest/corretto-11-ug/downloads-list.html" %}
 
 
 
