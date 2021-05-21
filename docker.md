@@ -6,7 +6,3 @@
 
 
 
-{% embed url="https://matsuand.github.io/docs.docker.jp.onthefly/docker-hub/official\_images/" %}
-
-
-
