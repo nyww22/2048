@@ -10,7 +10,7 @@
 
 
 
-[https://www.fixes.pub/program/192602.html](https://www.fixes.pub/program/192602.html)
+{% embed url="https://www.fixes.pub/program/192602.html" %}
 
 
 
