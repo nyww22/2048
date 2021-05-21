@@ -6,3 +6,9 @@
 
 
 
+### berrycondaインストール
+
+{% embed url="https://github.com/jjhelmus/berryconda" %}
+
+
+
