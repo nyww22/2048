@@ -7,7 +7,7 @@
 curl -LO https://dl.k8s.io/v1.21.0/kubernetes-client-linux-arm.tar.gz
 tar xvfz kubernetes-client-linux-arm.tar.gz
 mv kubernetes/client/bin/kubectl /usr/local/bin/
-sudo mv kubernetes/client/bin/kubectl /usr/local/bin/
+sudo cp kubernetes/client/bin/kubectl /usr/local/bin/
 kubectl version
 
 
