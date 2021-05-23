@@ -6,7 +6,6 @@
 # kubectlインストール
 curl -LO https://dl.k8s.io/v1.21.0/kubernetes-client-linux-arm.tar.gz
 tar xvfz kubernetes-client-linux-arm.tar.gz
-mv kubernetes/client/bin/kubectl /usr/local/bin/
 sudo cp kubernetes/client/bin/kubectl /usr/local/bin/
 kubectl version
 
@@ -14,7 +13,6 @@ kubectl version
 # minikubeインストール
 curl -LO https://github.com/kubernetes/minikube/releases/download/v1.20.0/minikube-linux-arm
 chmod +x minikube-linux-arm
-sudo minikube-linux-arm /usr/local/bin/minikube
 sudo cp minikube-linux-arm /usr/local/bin/minikube
 minikube version
  
