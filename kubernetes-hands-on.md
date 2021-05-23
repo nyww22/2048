@@ -14,7 +14,10 @@ kubectl version
 curl -LO https://github.com/kubernetes/minikube/releases/download/v1.20.0/minikube-linux-arm
 chmod +x minikube-linux-arm
 sudo cp minikube-linux-arm /usr/local/bin/minikube
-minikube version
+minikube version]
+
+sudo apt-get install conntrack
+
  
 ```
 
