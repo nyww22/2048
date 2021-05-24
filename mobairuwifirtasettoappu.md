@@ -1,8 +1,8 @@
 # モバイルWiFiルータセットアップ
 
-## OpenWrtインストール
+### OpenWrtインストール
 
-{% embed url="https://qiita.com/YujiroTakahashi/items/b1ad93c9f5538e4f71e5" caption="" %}
+{% embed url="https://qiita.com/YujiroTakahashi/items/b1ad93c9f5538e4f71e5" %}
 
 ```text
 # imgファイルを取得
@@ -27,11 +27,13 @@ sudo fdisk -l
 
 # SDカードへ更新
 sudo dd if=~/openwrt-bcm27xx-bcm2711-rpi-4-ext4-factory.img of=/dev/sda bs=2M conv=fsync
+
 ```
 
-{% embed url="https://qiita.com/somainit/items/4de7187f41406d7ee1f1" caption="" %}
+{% embed url="https://qiita.com/somainit/items/4de7187f41406d7ee1f1" %}
 
 ```text
+
 sudo fdisk /dev/sda
 
 * fdisk (util-linux 2.34) へようこそ。
@@ -117,13 +119,16 @@ sudo resize2fs /dev/sda2
 * resize2fs 1.45.5 (07-Jan-2020)
 * Resizing the filesystem on /dev/sda2 to 7773312 (4k) blocks.
 * The filesystem on /dev/sda2 is now 7773312 (4k) blocks long.
+
 ```
 
-{% embed url="https://qiita.com/somainit/items/fc7e4b3c01e6450927b8" caption="" %}
+{% embed url="https://qiita.com/somainit/items/fc7e4b3c01e6450927b8" %}
 
 イーサネットポート（Eth0）とLANケーブル、Hostマシン（Ubuntu20.04）を接続する。
 
-{% embed url="https://ichi.pro/ho-muru-ta-toshite-no-raspberrypi-91925125961076" caption="" %}
+{% embed url="https://ichi.pro/ho-muru-ta-toshite-no-raspberrypi-91925125961076" %}
+
+
 
 ```text
 @ ssh-keygen -f "/home/takuto/.ssh/known_hosts" -R "192.168.1.1"
@@ -164,6 +169,8 @@ passwd: password for root changed by root
 uci set network.lan.proto=dhcp
 uci commit
 service network restart
+
+
 ```
 
 モデムにRaspberry Pie4をLANケーブルで接続する。
@@ -198,12 +205,15 @@ lo        Link encap:Local Loopback
           TX packets:984 errors:0 dropped:0 overruns:0 carrier:0
           collisions:0 txqueuelen:1000 
           RX bytes:96453 (94.1 KiB)  TX bytes:96453 (94.1 KiB)
+
+
 ```
 
 ホストPCから接続する
 
 ```text
 ssh root@192.168.0.18
+
 ```
 
 LuCIのインストールを実施する
@@ -215,8 +225,9 @@ opkg install \
     luci-i18n-base-ja \
     luci-i18n-firewall-ja \
     luci-i18n-opkg-ja
-
+    
 service uhttpd restart
+
 ```
 
 ![](.gitbook/assets/image%20%287%29.png)
@@ -241,9 +252,23 @@ service uhttpd restart
 
 接続先のパスフレーズ：405BD8BA50EB
 
-## その他
 
-{% embed url="https://qiita.com/somainit/items/fc7e4b3c01e6450927b8" caption="" %}
 
-## kmod-usb-net-asix-ax88179パッケージインストール
+### その他
+
+{% embed url="https://qiita.com/somainit/items/fc7e4b3c01e6450927b8" %}
+
+
+
+### kmod-usb-net-asix-ax88179パッケージインストール
+
+
+
+
+
+
+
+
+
+
 

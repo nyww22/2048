@@ -11,10 +11,11 @@ $ kubectl version
 
 
 # minikubeインストール
-$ curl -LO https://github.com/kubernetes/minikube/releases/download/v1.20.0/minikube-linux-arm
-$ chmod +x minikube-linux-arm
-$ sudo cp minikube-linux-arm /usr/local/bin/minikube
-$ minikube version]
+$ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm64
+$ chmod +x minikube
+$ sudo mkdir -p /usr/local/bin/
+$ sudo install minikube /usr/local/bin/
+$ minikube version
 
 $ sudo apt-get install conntrack
 
