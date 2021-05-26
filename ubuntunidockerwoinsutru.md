@@ -9,7 +9,7 @@ $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 $ sudo apt-get update
 
-$ sudo apt-get install \
+$ sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -27,9 +27,13 @@ sudo add-apt-repository \
 
 # Docker CEをインストールする
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo apt-get install docker-compose
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-compose
 ```
+
+{% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
+
+
 
 ## AUFS StorageDriverを用いる場合
 
