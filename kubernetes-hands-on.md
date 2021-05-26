@@ -4,6 +4,8 @@
 
 ```text
 # kubectlインストール
+# URL: https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/
+
 $ curl -LO https://dl.k8s.io/v1.21.0/kubernetes-client-linux-arm.tar.gz
 $ tar xvfz kubernetes-client-linux-arm.tar.gz
 $ sudo cp kubernetes/client/bin/kubectl /usr/local/bin/
@@ -22,6 +24,8 @@ $ sudo apt-get install conntrack
 $ minikube start --vm-driver=none 
 
 ```
+
+{% embed url="https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/" %}
 
 
 
