@@ -6,11 +6,10 @@
 # kubectlインストール
 # URL: https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/
 
-$ curl -LO https://dl.k8s.io/v1.21.0/kubernetes-client-linux-arm.tar.gz
-$ tar xvfz kubernetes-client-linux-arm.tar.gz
-$ sudo cp kubernetes/client/bin/kubectl /usr/local/bin/
-$ kubectl version
-
+$ curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/arm64/kubectl"
+$ chmod +x ./kubectl
+$ sudo mv ./kubectl /usr/local/bin/kubectl
+$ kubectl version --client
 
 # minikubeインストール
 $ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm64
