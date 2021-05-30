@@ -18,3 +18,7 @@
 
 
 
+{% embed url="https://zenn.dev/yh1224/articles/s27zwgebofurtp1i6" %}
+
+
+
