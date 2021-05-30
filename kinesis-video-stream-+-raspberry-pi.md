@@ -14,3 +14,7 @@
 
 
 
+{% embed url="https://dev.classmethod.jp/articles/amazon-kinesis-vidseo-streams-gstreamer-rtsp-server/" %}
+
+
+
