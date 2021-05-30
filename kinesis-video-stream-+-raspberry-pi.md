@@ -10,3 +10,7 @@
 
 
 
+{% embed url="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/examples-gstreamer-plugin.html\#examples-gstreamer-plugin-docker" %}
+
+
+
