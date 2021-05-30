@@ -12,6 +12,8 @@
 
 {% embed url="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/examples-gstreamer-plugin.html\#examples-gstreamer-plugin-docker" %}
 
+{% embed url="https://docs.aws.amazon.com/ja\_jp/kinesisvideostreams/latest/dg/examples-rtsp.html" %}
+
 
 
 {% embed url="https://dev.classmethod.jp/articles/amazon-kinesis-vidseo-streams-gstreamer-rtsp-server/" %}
