@@ -29,4 +29,5 @@
 * [Java](java.md)
 * [Kubernetes Hands-On](kubernetes-hands-on.md)
 * [Kinesis Video Stream + Raspberry Pi](kinesis-video-stream-+-raspberry-pi.md)
+* [Git](git-1.md)
 
