@@ -6,3 +6,11 @@
 
 
 
+
+
+### GitHub Actions
+
+{% embed url="https://docs.github.com/ja/actions/quickstart" %}
+
+
+
