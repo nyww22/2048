@@ -20,6 +20,10 @@
 
 ### MultiArchitecture
 
+{% embed url="https://hub.docker.com/repository/docker/nyww22/kvs-rp-sample/builds" %}
+
+
+
 
 
 github actionsを用いる場合
