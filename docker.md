@@ -24,10 +24,6 @@
 
 
 
-{% embed url="https://github.com/multiarch/qemu-user-static" %}
-
-
-
 
 
 github actionsを用いる場合

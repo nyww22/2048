@@ -26,5 +26,9 @@
 
 {% embed url="https://hpc-tutorials.llnl.gov/posix/\#Compiling" %}
 
+```text
+# 特権なしでビデオカメラにアクセス可能な設定を行う
+$ sudo usermod -a -G video $USER
 
+```
 
