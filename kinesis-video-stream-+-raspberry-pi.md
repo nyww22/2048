@@ -36,5 +36,7 @@ $ sudo usermod -a -G video $USER
 
 {% embed url="https://www.losant.com/blog/how-to-access-the-raspberry-pi-camera-in-docker" %}
 
+{% embed url="https://spltech.co.uk/how-to-access-the-raspberry-pi-camera-inside-docker-and-opencv/" %}
+
 
 
