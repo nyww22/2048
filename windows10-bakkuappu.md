@@ -4,5 +4,7 @@
 
 システムイメージバックアップ
 
-{% embed url="https://www.pasoble.jp/windows/10/088142.html" caption="" %}
+{% embed url="https://www.pasoble.jp/windows/10/088142.html" %}
+
+
 

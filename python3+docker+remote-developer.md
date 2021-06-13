@@ -4,9 +4,95 @@ Docker Install
 
 {% embed url="https://docs.docker.com/engine/install/ubuntu/" %}
 
+{% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
+
+
+
+{% embed url="https://www.python.jp/install/ubuntu/pip.html" %}
+
 {% embed url="https://qiita.com/reflet/items/4b3f91661a54ec70a7dc" %}
 
 {% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
+
+```text
+# Install Docker Engine
+   
+   $ sudo apt-get remove docker docker-engine docker.io containerd runc
+   
+   $ sudo apt-get update
+   
+   $ sudo apt-get install     apt-transport-https     ca-certificates     curl     gnupg-agent     software-properties-common
+   
+   $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   
+   $ sudo apt-key fingerprint 0EBFCD88
+   
+   $ sudo add-apt-repository    "deb [arch=arm64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+   
+   $ sudo apt-get update
+   
+   $ sudo apt-get install docker-ce docker-ce-cli containerd.io   
+
+   $ sudo docker run hello-world
+
+            
+# useradd Docker Group
+
+# dockerグループへログインユーザを登録
+$ sudo usermod -aG docker $USER
+
+# グループの即時反映
+$ newgrp docker
+
+# sudoなしで実行できることを確認する
+$ docker run hello-world
+
+
+# Ubuntu起動時にDockerサービスが起動するように設定
+
+$ sudo systemctl enable docker.service
+$ sudo systemctl enable containerd.service
+
+# 上記設定を無効にする場合は以下のコマンドを実行
+$ sudo systemctl disable docker.service
+$ sudo systemctl disable containerd.service
+
+```
+
+### 
+
+### Docker Composeをインストール
+
+{% embed url="https://docs.docker.com/compose/install/" %}
+
+```text
+# Raspberry Pi(arm64)のためpip経由での代替方法でインストールする
+
+$ sudo apt install python3-pip
+
+$ sudo pip3 install -U docker-compose
+
+$ which docker-compose
+/usr/local/bin/docker-compose
+
+$ docker-compose -v
+docker-compose version 1.28.0, build unknown
+
+```
+
+
+
+### Docker マルチCPUアーキテクチャサポート
+
+{% embed url="https://dev.classmethod.jp/articles/docker-multi-architecture-image-build/" %}
+
+{% embed url="https://qiita.com/NT1123/items/06794fd0435df5eefce4" %}
+
+{% embed url="https://matsuand.github.io/docs.docker.jp.onthefly/docker-for-mac/multi-arch/" %}
+
+
 
 
 

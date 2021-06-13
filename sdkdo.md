@@ -1,6 +1,8 @@
 # SDカード移行
 
-## SDカードからPCへバックアップ
+
+
+### SDカードからPCへバックアップ
 
 ```text
 $ sudo fdisk -l
@@ -19,14 +21,20 @@ I/O サイズ (最小 / 推奨): 512 バイト / 512 バイト
 
 
 $ sudo dd if=/dev/sda of=/home/takuto/sdcardimg.dd bs=32M
+
+
 ```
 
-## バックアップファイルからSDカードへリストア
+
+
+### バックアップファイルからSDカードへリストア
 
 ```text
 $ sudo fdisk -l
 
 
 $ sudo dd if=/home/takuto/sdcardimg.dd of=/dev/sdc bs=32M
+
+
 ```
 

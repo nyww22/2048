@@ -1,6 +1,6 @@
 # Ubuntu20.04にDockerをインストール
 
-{% embed url="https://docs.docker.com/engine/install/ubuntu/" caption="" %}
+{% embed url="https://docs.docker.com/engine/install/ubuntu/" %}
 
 ```text
 # 古いバージョンのDockerを削除する
@@ -9,7 +9,7 @@ $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
 $ sudo apt-get update
 
-$ sudo apt-get install -y \
+$ sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -27,20 +27,38 @@ sudo add-apt-repository \
 
 # Docker CEをインストールする
 sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-sudo apt-get install -y docker-compose
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-compose
+
+# dockerグループへユーザを追加
+sudo usermod -aG docker $USER
+
+# グループへの変更をアクティブ化
+newgrp docker 
+
 ```
 
-{% embed url="https://docs.docker.com/engine/install/linux-postinstall/" %}
 
 
 
-## AUFS StorageDriverを用いる場合
 
-{% embed url="https://docs.docker.com/storage/storagedriver/aufs-driver/" caption="" %}
+update\(2021.6.13\)
+
+docker-composeのインストール方法を更新
+
+{% embed url="https://docs.docker.com/compose/install/" %}
+
+
+
+### AUFS StorageDriverを用いる場合
+
+{% embed url="https://docs.docker.com/storage/storagedriver/aufs-driver/" %}
 
 ```text
 ＃カーネルがAUFSドライバをサポートしているか確認する。
 sudo grep aufs /proc/filesystems
+
 ```
+
+
 
