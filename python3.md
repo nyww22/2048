@@ -12,3 +12,11 @@
 
 
 
+### Jupyter NotebookとAnaconda\(conda\)環境の連携
+
+連携を行うことでTerminalとJupyter Notebookでの仮想環境を共有できる。設定がミスっていると同じ環境での動作が行えない。
+
+{% embed url="https://www.servernote.net/article.cgi?id=anaconda-jupyter-notebook-on-myenv" %}
+
+
+
