@@ -25,15 +25,3 @@ RUN click chroot -a armhf -f ubuntu-sdk-15.04 install cmake libicu-dev:armhf pkg
 
 ```
 
-
-
-
-
-Android Emulator on Docker
-
-Docker上で動作させてWebブラウザでエミュレータ画面を表示させる方法
-
-{% embed url="https://github.com/google/android-emulator-container-scripts" %}
-
-
-

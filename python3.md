@@ -20,3 +20,9 @@
 
 
 
+### Python3仮想環境：純正
+
+{% embed url="https://qiita.com/HyunwookPark/items/d821c8925fb9c25d1737" %}
+
+
+
