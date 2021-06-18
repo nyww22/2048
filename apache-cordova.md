@@ -40,6 +40,8 @@ Docker上で動作させてWebブラウザでエミュレータ画面を表示�
 # python3仮想環境をインストールする
 $ sudo apt-get install python3-venv
 
+# Android Command Line Tools(ADB等)をインストールする
+$ wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip?hl=ja
 
 # 上記サイトからソースコード一式をダウンロードする
 $ git clone https://github.com/google/android-emulator-container-scripts.git
