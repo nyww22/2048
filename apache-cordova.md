@@ -36,6 +36,10 @@ Docker上で動作させてWebブラウザでエミュレータ画面を表示�
 {% embed url="https://github.com/google/android-emulator-container-scripts" %}
 
 ```text
+# 事前準備
+# python3仮想環境をインストールする
+$ sudo apt-get install python3-venv
+
 
 # 上記サイトからソースコード一式をダウンロードする
 $ git clone https://github.com/google/android-emulator-container-scripts.git
@@ -44,7 +48,6 @@ $ cd android-emulator-container-scripts/
 
 
 $ . ./configure.sh && emu-docker create stable "P android x86_64"
-
 
 
 $ ./create_web_container.sh -p user,pw
