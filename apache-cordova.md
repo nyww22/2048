@@ -35,6 +35,10 @@ Docker上で動作させてWebブラウザでエミュレータ画面を表示�
 
 {% embed url="https://github.com/google/android-emulator-container-scripts" %}
 
+{% embed url="https://qiita.com/ntsk/items/7e068812db4cd654d914" %}
+
+
+
 ```text
 # 事前準備
 # python3仮想環境をインストールする
