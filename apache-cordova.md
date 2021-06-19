@@ -72,7 +72,11 @@ $ mkdir ~/.android
 
 $ ./create_web_container.sh -p user,pw
 
+# docker起動（Web接続＋adb接続可能）
+$ docker-compose -f js/docker/docker-compose-build.yaml -f js/docker/development.yaml up
 
+# docker起動（Web接続のみ）
+$ docker-compose -f js/docker/docker-compose-build.yaml up
 
 ```
 
