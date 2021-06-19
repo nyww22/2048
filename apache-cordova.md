@@ -90,5 +90,72 @@ Androidビルド環境構築
 
 {% embed url="https://qiita.com/kaihei777/items/1a94a8a329c8fb67d421" %}
 
+```text
+$ cat Dockerfile
+
+# ----------
+FROM node-base as android-cordova-builder
+
+ARG GRADLE_VERSION="6.5"
+
+ENV BUILD_TOOLS_VERSION=28.0.3
+ENV PLATFORMS_VERSION=android-28
+
+#RUN apt update -y; \
+#apt install -y openjdk-11-jdk
+
+# openjdk8
+RUN wget --quiet https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u292b10.tar.gz; \
+tar xzf OpenJDK8U-jdk_x64_linux_hotspot_8u292b10.tar.gz; \
+rm -rf OpenJDK8U-jdk_x64_linux_hotspot_8u292b10.tar.gz; \
+mv ./jdk8u292-b10 /opt/
+
+# command-line-toolsをダウンロードして解凍します。
+RUN wget --quiet -O android-sdk.zip https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip?hl=ja; \
+unzip -q -d android-sdk-linux android-sdk.zip; \
+rm -rf android-sdk.zip; \
+mv android-sdk-linux /usr/local/; \
+ln -s /usr/local/android-sdk-linux/cmdline-tools/bin/sdkmanager /usr/local/bin/sdkmanager
+
+# gradleをダウンローして解凍します。
+RUN wget --quiet --output-document=gradle-bin.zip https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip; \
+unzip -q -d gradle gradle-bin.zip; \
+rm -rf gradle-bin.zip; \
+mv ./gradle /usr/local
+
+
+# 環境変数
+ENV JAVA_HOME /opt/jdk8u292-b10
+ENV ANDROID_SDK_ROOT /usr/local/android-sdk-linux
+ENV GRADLE_HOME /usr/local/gradle/gradle-${GRADLE_VERSION}
+ENV PATH $PATH:$ANDROID_SDK_ROOT/cmdline-tools/bin:$GRADLE_HOME/bin:$JAVA_HOME/bin:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools
+
+# sdk-toolsのlicensesに同意します。
+RUN mkdir ~/.android && \
+    touch ~/.android/repositories.cfg
+RUN yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --licenses >/dev/null
+
+# install android tools and more
+RUN sdkmanager --sdk_root=${ANDROID_SDK_ROOT} "tools" "build-tools;${BUILD_TOOLS_VERSION}" "platforms;${PLATFORMS_VERSION}" "platform-tools" "extras;android;m2repository"
+
+RUN npm install -g cordova
+
+# native-client build
+#RUN cd native-client; \
+#cordova platform add android; \
+#cordova cordova prepare; \
+#cordova build
+
+## ----------
+FROM android-cordova-builder as apk-builder
+
+WORKDIR /home/node/oauth-work/native-client
+RUN cordova platform add android
+RUN cordova plugin add cordova-plugin-inappbrowser
+RUN cordova plugin add cordova-plugin-customurlscheme --variable URL_SCHEME=com.oauthinaction.mynativeapp
+RUN cordova build
+
+```
+
 
 
