@@ -50,7 +50,12 @@ $ unzip android-platform-tools.zip
 $ sudo mv android-platform-tools /usr/local/
 
 # 使用するコマンドのみシンボリックリンクを設定する
-$ sudo ln -s 
+$ sudo ln -s /usr/local/android-platform-tools/adb /usr/local/bin/adb
+$ cd /usr/local/bin
+$ ls -la
+drwxr-xr-x  2 root        root            4096  6月 19 09:03 .
+drwxr-xr-x 13 root        root            4096  6月 19 08:10 ..
+lrwxrwxrwx  1 root        root              37  6月 19 09:03 adb -> /usr/local/android-platform-tools/adb
 
 
 # 上記サイトからソースコード一式をダウンロードする
@@ -61,11 +66,15 @@ $ cd android-emulator-container-scripts/
 
 $ . ./configure.sh && emu-docker create stable "P android x86_64"
 
+# homeディレクトリに.androidフォルダを作成する
+# adbkey生成時に該当フォルダへ出力するため
+$ mkdir ~/.android
 
 $ ./create_web_container.sh -p user,pw
 
 
 
-
 ```
+
+
 
