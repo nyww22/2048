@@ -34,3 +34,9 @@ DPoP
 
 
 
+#### ID連携とは
+
+{% embed url="https://www.slideshare.net/kura\_lab/20190815-id-handson" %}
+
+
+
