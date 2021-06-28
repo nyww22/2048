@@ -36,5 +36,4 @@
 * [Java](java.md)
 * [安全性の実装](no.md)
 * [OAuth2.0 + OIDC](oauth2.0-+-oidc.md)
-* [SPA＋OAuth2.0](spa-oauth2.0.md)
 
