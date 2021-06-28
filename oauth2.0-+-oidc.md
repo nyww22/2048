@@ -22,5 +22,11 @@
 
 
 
+{% embed url="https://kimuson.dev/blog/%E3%83%95%E3%83%AD%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%83%89/auth0\_token\_django\_next\_imple/" %}
+
+{% embed url="https://tech.hicustomer.jp/posts/modern-authentication-in-hosting-spa/" %}
+
+
+
 
 
