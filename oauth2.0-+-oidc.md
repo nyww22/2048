@@ -16,7 +16,7 @@
 
 
 
-
+![](.gitbook/assets/image%20%281%29.png)
 
 {% embed url="https://kb.authlete.com/ja/s/oauth-and-openid-connect/a/hybrid-flow-access-tokens" %}
 
