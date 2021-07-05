@@ -59,6 +59,9 @@ net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev
 ```text
 $ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 $ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+$ minikube version
+minikube version: v1.21.0
+commit: 76d74191d82c47883dc7e1319ef7cebd3e00ee11
 
 ```
 
