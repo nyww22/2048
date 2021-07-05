@@ -62,5 +62,9 @@ Docker はじめに
 
 {% embed url="https://docs.docker.jp/get-started/index.html" %}
 
+#### よりよいDockerイメージを求めて
+
+{% embed url="https://qiita.com/yugui/items/517480f4383b893e092e" %}
+
 
 
