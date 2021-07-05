@@ -63,5 +63,23 @@ $ minikube version
 minikube version: v1.21.0
 commit: 76d74191d82c47883dc7e1319ef7cebd3e00ee11
 
+$ minikube start
+😄  Ubuntu 20.04 上の minikube v1.21.0
+✨  dockerドライバーが自動的に選択されました。他の選択肢:  ssh, none
+👍  コントロールプレーンのノード minikube を minikube 上で起動しています
+🚜  イメージを Pull しています...
+💾  Kubernetes v1.20.7 のダウンロードの準備をしています
+    > gcr.io/k8s-minikube/kicbase...: 359.09 MiB / 359.09 MiB  100.00% 2.26 MiB
+    > preloaded-images-k8s-v11-v1...: 492.20 MiB / 492.20 MiB  100.00% 2.73 MiB
+🔥  docker container (CPUs=2, Memory=3900MB) を作成しています...
+🐳  Docker 20.10.7 で Kubernetes v1.20.7 を準備しています...
+    ▪ 証明書と鍵を作成しています...
+    ▪ Control Plane を起動しています...
+    ▪ RBAC のルールを設定中です...
+🔎  Kubernetes コンポーネントを検証しています...
+    ▪ イメージ gcr.io/k8s-minikube/storage-provisioner:v5 を使用しています
+🌟  有効なアドオン: storage-provisioner, default-storageclass
+🏄  完了しました！ kubectl が「"minikube"」クラスタと「"default"」ネームスペースを使用するよう構成されました
+
 ```
 
