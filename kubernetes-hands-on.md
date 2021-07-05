@@ -54,5 +54,11 @@ net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev
 
 {% embed url="https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/" %}
 
+#### minikubeインストール＆設定
 
+```text
+$ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+$ sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+```
 
