@@ -52,3 +52,7 @@ net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev
  
 ```
 
+{% embed url="https://kubernetes.io/ja/docs/tasks/tools/install-kubectl/" %}
+
+
+
