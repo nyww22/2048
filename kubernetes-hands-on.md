@@ -1,6 +1,6 @@
 # Kubernetes Hands-On
 
-
+#### ARM64（Raspberry Pi4）へのインストール方法
 
 ```text
 # kubectlインストール
@@ -41,4 +41,14 @@ net.ifnames=0 dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev
 ```
 
 
+
+#### Ubuntu20.04へのインストール方法
+
+```text
+ $ curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+ $ chmod +x ./kubectl 
+ $ sudo mv ./kubectl /usr/local/bin/kubectl
+ $ kubectl version --client
+ 
+```
 
