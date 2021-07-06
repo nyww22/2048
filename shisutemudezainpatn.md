@@ -35,11 +35,47 @@ redis-cli
 2
 
 
+# ローカルマシンに戻り、下記の各コマンドで各Redisの登録されたキーを確認する
+$ kubectl exec -it sharded-redis-0 --container redis redis-cli
+127.0.0.1:6379> keys *
 
+$ kubectl exec -it sharded-redis-1 --container redis redis-cli
+127.0.0.1:6379> keys *
+hoge
+
+$ kubectl exec -it sharded-redis-2 --container redis redis-cli
+127.0.0.1:6379> keys *
+fuga
+
+
+
+# 各種デプロイ資材を破棄する
+$ kubectl delete -f twemproxy-ambassador-pod.yaml 
+pod "ambassador-example" deleted
+
+$ kubectl delete -f redis-service.yaml
+service "redis" deleted
+
+$ kubectl delete -f redis-shards.yaml
+statefulset.apps "sharded-redis" deleted
+
+$ kubectl delete configmap twemconfig
+configmap "twem-config" deleted
+
+# 資材削除されているかの確認
+$ kubectl get all
 
 
 
 ```
+
+
+
+サービスブローカーとしての利用
+
+
+
+
 
 
 
