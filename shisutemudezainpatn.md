@@ -69,6 +69,8 @@ $ kubectl get all
 
 ```
 
+{% embed url="https://qiita.com/reireias/items/85bcd0acc7f6982041c4" %}
+
 
 
 サービスブローカーとしての利用
