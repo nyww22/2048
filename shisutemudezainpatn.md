@@ -77,6 +77,30 @@ $ kubectl get all
 
 
 
+実験的運用やリクエスト分割への利用（例えば10%のアクセスのみ実験用システムに送る）
+
+```text
+# 
+$ kubectl create -f web-experiment.yaml 
+service/experiment created
+service/web created
+
+# 
+$ kubectl create configmap experiment-config --from-file=nginx.conf
+configmap/experiment-config created
+
+# 
+$ kubectl crete -f  experiments-ambassador-pod.yaml 
+pod/experiment-example created
+
+
+
+
+
+
+
+```
+
 
 
 
